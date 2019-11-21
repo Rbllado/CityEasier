@@ -1,9 +1,10 @@
-.DS_Store
 
+# Should not commit all the hide documents 
+.*
+!/.gitignore
+
+
+
+#
 node_modules
-
-.env
-
-.vscode
-
 package-lock.json
