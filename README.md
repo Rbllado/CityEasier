@@ -18,37 +18,36 @@ Application web to make easier your stay in a city. You will be able to find the
 - **Logout** - As a user I want to be able to log out from the web page so that I can make sure no one will access my account
 - **Favorite list** - As a user I want to see the list of my favorite and delete them.
 - **Edit user** - As a user I want to be able to edit my profile.
-- **Restaurant listing** - As a user I want to see more details of the restaurant in a city, be able to see the rating, description and add to my favourites
-- **Museum listing** - As a user I want to see more details of the museums in a city, be able to see the rating, description and add to my favourites
-- **Eventslisting** - As a user I want to see more details of the events in a city, be able to see the rating, description and add to my favourites
+- **Restaurants listing** - As a user I want to see more details of the restaurant in a city, be able to see the rating, description and add to my favourites
+- **Museums listing** - As a user I want to see more details of the museums in a city, be able to see the rating, description and add to my favourites
+- **Events listing** - As a user I want to see more details of the events in a city, be able to see the rating, description and add to my favourites
 - **Hotels listing** - As a user I want to see more details of the hotels in a city, be able to see the rating, description and add to my favourites
-
-
 
 <br>
 
-
-
 ## API Routes (Back-end):
 
-
-
-| **Method** | **Route**                          | **Description**                                              | Request  - Body                           |
-| -----------| -----------------------------------| -------------------------------------------------------------| ------------------------------------------|
-| `GET`      | `/`                                | Main page route.  Renders home `index` view.                 |                                           |
-| `GET`      | `/login`                           | Renders `login` form view.                                   |                                           |
-| `POST`     | `/login`                           | Sends Login form data to the server.                         | { email, password }                       |
-| `GET`      | `/signup`                          | Renders `signup` form view.                                  |                                           |
-| `POST`     | `/signup`                          | Sends Sign Up info to the server and creates user in the DB. | {  email, password  }                     |
-| `GET`      | `/private/edit-profile`            | Private route. Renders `edit-profile` form view.             |                                           |
-| `PUT`      | `/private/edit-profile`            | Private route. Sends edit-profile info to server and updates user in DB. | { email, password, [firstName], [lastName], [imageUrl] } |
-| `GET`      | `/private/favorites`               | Private route. Render the `favorites` view.                  |                                           |
-| `POST`     | `/private/favorites/`              | Private route. Adds a new favorite for the current user.     | { name, cuisine, city, }                  |
-| `DELETE`   | `/private/favorites/:OwnerId` | Private route. Deletes the existing favorite from the current user.|                                          |
-| `GET`      | `/restaurants`                     | Renders `restaurant-list` view.                              |                                           |
-| `GET`      | `/restaurants/details/:id`         | Render `restaurant-details` view for the particular restaurant. |                                        |
-
-
+| **Method** | **Route**                     | **Description**                                                          | Request - Body                                           |
+| ---------- | ----------------------------- | ------------------------------------------------------------------------ | -------------------------------------------------------- |
+| `GET`      | `/`                           | Main page route. Renders home `index` view.                              |                                                          |
+| `GET`      | `/login`                      | Renders `login` form view.                                               |                                                          |
+| `POST`     | `/login`                      | Sends Login form data to the server.                                     | { email, password }                                      |
+| `GET`      | `/logout`                     | Renders `index` form view.                                               |                                                          |
+| `GET`      | `/signup`                     | Renders `signup` form view.                                              |                                                          |
+| `POST`     | `/signup`                     | Sends Sign Up info to the server and creates user in the DB.             | { email, password }                                      |
+| `GET`      | `/private/edit-profile`       | Private route. Renders `edit-profile` form view.                         |                                                          |
+| `PUT`      | `/private/edit-profile`       | Private route. Sends edit-profile info to server and updates user in DB. | { email, password, [firstName], [lastName], [imageUrl] } |
+| `GET`      | `/private/favorites`          | Private route. Render the `favorites` view.                              |                                                          |
+| `POST`     | `/private/favorites/`         | Private route. Adds a new favorite for the current user.                 | { name, cuisine, city, }                                 |
+| `DELETE`   | `/private/favorites/:OwnerId` | Private route. Deletes the existing favorite from the current user.      |                                                          |
+| `GET`      | `/restaurants`                | Renders `restaurant-list` view.                                          |                                                          |
+| `GET`      | `/restaurants/details/:id`    | Render `restaurant-details` view for the particular restaurant.          |                                                          |
+| `GET`      | `/museums`                    | Renders `museums-list` view.                                             |                                                          |
+| `GET`      | `/museums/details/:id`        | Render `museums-details` view for the particular museum.                 |                                                          |
+| `GET`      | `/hotels`                     | Renders `hotels-list` view.                                              |                                                          |
+| `GET`      | `/hotels/details/:id`         | Render `hotels-details` view for the particular hotel.                   |                                                          |
+| `GET`      | `/events`                     | Renders `events-list` view.                                              |                                                          |
+| `GET`      | `/events/details/:id`         | Render `events-details` view for the particular event.                   |                                                          |
 
 ## Models
 
@@ -73,22 +72,39 @@ Favorites model
 
 ```
 
-
 Cities model
 
 ```javascript
 {
-  
+  name: String,
+  img: String,
+  restaurants: [RestaurantsId],
+  museums: [MuseumsId],
+  events: [EventsId],
+  hotels: [HotelsId],
 }
 
 ```
 
-Restaurantes model
+Restaurants model
 
 ```javascript
 {
-    
-  }
+  name: String,
+  type: String,
+  rating: Number,
+  contact: [{
+    addres: String,
+    phone: Number
+  }]
+  web: String,
+  description: String,
+  comments:[{
+    name: String,
+    date: Date,
+    comment: String
+  }]
+}
 
 ```
 
@@ -96,54 +112,82 @@ Events model
 
 ```javascript
 {
-    
-  }
-
+  name: String,
+  type: String,
+  rating: Number,
+  contact: [{
+    addres: String,
+    phone: Number
+  }]
+  web: String,
+  description: String,
+  comments:[{
+    name: String,
+    date: Date,
+    comment: String
+  }]
+}
 ```
 
 Hotel model
 
 ```javascript
 {
-    
-  }
-
+  name: String,
+  type: String,
+  rating: Number,
+  contact: [{
+    addres: String,
+    phone: Number
+  }]
+  web: String,
+  description: String,
+  comments:[{
+    name: String,
+    date: Date,
+    comment: String
+  }]
+}
 ```
 
 Museum model
 
 ```javascript
 {
-    
-  }
-
+  name: String,
+  type: String,
+  rating: Number,
+  contact: [{
+    addres: String,
+    phone: Number
+  }]
+  web: String,
+  description: String,
+  comments:[{
+    name: String,
+    date: Date,
+    comment: String
+  }]
+}
 ```
-
-
 
 <br>
 
 ## Backlog
 
-
+Trello
 
 ## Links
-
-
 
 ### Git
 
 The url to your repository and to your deployed project
 
-[Repository Link]()
+[Repository Link](https://github.com/Rbllado/CityEasier)
 
 [Deploy Link]()
 
-
-
 <br>
-
-
 
 ### Slides
 
