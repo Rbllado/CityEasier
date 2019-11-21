@@ -1,0 +1,1 @@
+// Redirecciona a la ficha de un sitio.

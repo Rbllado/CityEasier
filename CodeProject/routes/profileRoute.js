@@ -1,0 +1,1 @@
+// Va a redireccionar a /private/profile.hbs --> donde tendremos el perfil de usuario.
