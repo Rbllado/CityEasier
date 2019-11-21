@@ -1,9 +1,16 @@
 
-# Should not commit all the hide documents 
-.*
-!/.gitignore
+# Should not commit next documents
 
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
+# System Files
+.DS_Store
+.env
 
 #
 node_modules
