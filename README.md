@@ -33,21 +33,20 @@ Application web to make easier your stay in a city. You will be able to find the
 
 
 
-| **Method** | **Route**                          | **Description**                                              | Request  - Body                                          |
-| -----------| -----------------------------------| -------------------------------------------------------------| -------------------------------------- |
-
-| `GET`      | `/`                                | Main page route.  Renders home `index` view.                 |                                              |          |
-| `GET`      | `/login`                           | Renders `login` form view.                                   |                                              |           |
-| `POST`     | `/login`                           | Sends Login form data to the server.                         | { email, password }                          |            |
-| `GET`      | `/signup`                          | Renders `signup` form view.                                  |                                              |             |
-| `POST`     | `/signup`                          | Sends Sign Up info to the server and creates user in the DB. | {  email, password  }                        |             |
-| `GET`      | `/private/edit-profile`            | Private route. Renders `edit-profile` form view.             |                                              |              |
+| **Method** | **Route**                          | **Description**                                              | Request  - Body                           |
+| -----------| -----------------------------------| -------------------------------------------------------------| ------------------------------------------|
+| `GET`      | `/`                                | Main page route.  Renders home `index` view.                 |                                           |
+| `GET`      | `/login`                           | Renders `login` form view.                                   |                                           |
+| `POST`     | `/login`                           | Sends Login form data to the server.                         | { email, password }                       |
+| `GET`      | `/signup`                          | Renders `signup` form view.                                  |                                           |
+| `POST`     | `/signup`                          | Sends Sign Up info to the server and creates user in the DB. | {  email, password  }                     |
+| `GET`      | `/private/edit-profile`            | Private route. Renders `edit-profile` form view.             |                                           |
 | `PUT`      | `/private/edit-profile`            | Private route. Sends edit-profile info to server and updates user in DB. | { email, password, [firstName], [lastName], [imageUrl] } |
-| `GET`      | `/private/favorites`               | Private route. Render the `favorites` view.                  |                                              |               |
-| `POST`     | `/private/favorites/`              | Private route. Adds a new favorite for the current user.     | { name, cuisine, city, }                     |                |
-| `DELETE`   | `/private/favorites/:OwnerId` | Private route. Deletes the existing favorite from the current user. |                                            |
-| `GET`      | `/restaurants`                     | Renders `restaurant-list` view.                              |                                                          |
-| `GET`      | `/restaurants/details/:id`         | Render `restaurant-details` view for the particular restaurant. |                                           |               |
+| `GET`      | `/private/favorites`               | Private route. Render the `favorites` view.                  |                                           |
+| `POST`     | `/private/favorites/`              | Private route. Adds a new favorite for the current user.     | { name, cuisine, city, }                  |
+| `DELETE`   | `/private/favorites/:OwnerId` | Private route. Deletes the existing favorite from the current user.|                                          |
+| `GET`      | `/restaurants`                     | Renders `restaurant-list` view.                              |                                           |
+| `GET`      | `/restaurants/details/:id`         | Render `restaurant-details` view for the particular restaurant. |                                        |
 
 
 
