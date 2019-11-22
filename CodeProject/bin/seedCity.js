@@ -13,7 +13,7 @@ const cities = [
     hotels: []
   },
   {
-    name: "Londres",
+    name: "Paris",
     img: String,
     restaurants: [],
     museums: [],

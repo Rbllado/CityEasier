@@ -8,7 +8,7 @@ const cityModel = new Schema({
 
         name: String,
         // img: String,
-        restaurants: [{type: Schema.Types.ObjectId , ref: 'Restaurants'}],
+        restaurants: [{type: Schema.Types.ObjectId , ref: 'Restaurant'}],
         museums: [{type: Schema.Types.ObjectId , ref: 'Museum'}],
         events: [{type: Schema.Types.ObjectId , ref: 'Event'}],
         hotels: [{type: Schema.Types.ObjectId , ref: 'Hotel'}],
