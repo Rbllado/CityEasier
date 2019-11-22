@@ -4,6 +4,9 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const Hotel = require("./../models/HotelModel");
+const City = require("./../models/CitiesModel");
+
+
 
 // Create schema for the city
 const hotel = [
@@ -11,12 +14,12 @@ const hotel = [
     name: "CATALONIA BORN",
     type: "Hotel",
     rating: 6,
-    contact: [
+    contact: 
       {
-        addres: "Barcelona",
+        address: "Barcelona",
         phone: 666993299
       }
-    ],
+    ,
     web:
       "https://www.cataloniahotels.com/es/hotel/catalonia-born",
     description: `
@@ -36,12 +39,12 @@ const hotel = [
     name: "Hotel Ostias",
     type: "Hotel",
     rating: 4,
-    contact: [
+    contact: 
       {
-        addres: "Barcelona",
+        address: "Barcelona",
         phone: 677332233
       }
-    ],
+    ,
     web: "https://www.hoteloasis.es/es/index.html",
     description: `What makes a desert beautiful is that somewhere it hides a well.`,
     comments: [
@@ -86,10 +89,46 @@ mongoose
     return Hotel.create(hotel);
 })
 .then( (insertedHotel) => {
-    console.log("Inserted Cities : ", insertedHotel.length);
-    mongoose.connection.close();
-    
-})
-.catch( (err) => console.log(err));
+  console.log("Este base de datos >>>>>>", insertedHotel);
 
-// module.exports = Hotel;
+  // Create empty object to serve as the index of cities
+  // restaurants is returned after Restaurant.create()
+  const hotelByCity = {};
+
+  // Create property names in hotelByCity for each city
+  // insertedHotel.forEach((hotel) => {
+
+  insertedHotel.forEach(hotel => {
+    const cityName = hotel.contact.address;
+
+    if (!hotelByCity[cityName]) {
+      hotelByCity[cityName] = [];
+      hotelByCity[cityName].push(hotel._id);
+    } else {
+      hotelByCity[cityName].push(hotel._id);
+    }
+  });
+
+  // Check if we have object with city names and ids
+  console.log(hotelByCity);
+
+  // Create an array of the key names (representing cities)
+  const hotelCityNames = Object.keys(hotelByCity);
+
+  const updatedCityPromises = hotelCityNames.map(cityName => {
+
+    return City.updateOne(
+      { name: cityName },
+      // should be in collection hotels and Types_ObjectId because it is a refrence 
+      { $set: { hotels: hotelByCity[cityName] } }
+    )
+  });
+
+  Promise.all(updatedCityPromises)
+      .then( () => {
+        mongoose.connection.close();
+      })
+      .catch( (err) => console.log(err));
+
+})
+.catch(err => console.log(err));

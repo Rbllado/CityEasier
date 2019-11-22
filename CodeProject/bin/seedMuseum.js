@@ -4,19 +4,20 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const Museum = require("./../models/MuseumModel");
+const City = require("./../models/CitiesModel");
 
 // Create schema for the city
-const museumSchema = [
+const museums = [
   {
     name: "Museo Nacional de Arte de Cataluña",
     type: "Art",
     rating: 9,
-    contact: [
+    contact: 
       {
-        addres: "Barcelona",
+        address: "Barcelona",
         phone: 666828384
       }
-    ],
+    ,
     web:
       "https://www.museunacional.cat/es",
     description: `
@@ -37,12 +38,12 @@ const museumSchema = [
     name: "Picasso museum",
     type: "Art",
     rating: 4,
-    contact: [
+    contact: 
       {
-        addres: "Barcelona",
+        address: "Barcelona",
         phone: 677334566
       }
-    ],
+    ,
     web: "http://www.museupicasso.bcn.cat/es",
     description: `The Picasso Museum in Barcelona, officially and in Catalan Museu Picasso,
      has a collection of 4,249 works by the Malaga-born painter Pablo Picasso in the multiple
@@ -64,7 +65,7 @@ const museumSchema = [
 //     rating: Number,
 //     contact: [
 //       {
-//         addres: String,
+//         address: String,
 //         phone: Number
 //       }
 //     ],
@@ -88,13 +89,56 @@ mongoose
     useNewUrlParser: true
 })
 .then(()=>{
-    return Museum.create(museumSchema);
+    return Museum.create(museums);
 })
 .then( (insertedMuseums) => {
-    console.log("Inserted Cities : ", insertedMuseums.length);
-    mongoose.connection.close();
-    
-})
-.catch( (err) => console.log(err));
 
-// module.exports = Museum;
+
+  console.log("Este base de datos >>>>>>", insertedMuseums);
+
+  // Create empty object to serve as the index of cities
+  // museums is returned after museum.create()
+  const museumByCity = {};
+
+  // Create property names in museumByCity for each city
+  // insertedMuseums.forEach((museum) => {
+
+  insertedMuseums.forEach(museum => {
+    const cityName = museum.contact.address;
+
+    if (!museumByCity[cityName]) {
+      museumByCity[cityName] = [];
+      museumByCity[cityName].push(museum._id);
+    } else {
+      museumByCity[cityName].push(museum._id);
+    }
+  });
+
+  // Check if we have object with city names and ids
+  console.log(museumByCity);
+
+  // Create an array of the key names (representing cities)
+  const museumCityNames = Object.keys(museumByCity);
+
+  const updatedCityPromises = museumCityNames.map(cityName => {
+
+    return City.updateOne(
+      { name: cityName },
+      // should be in collection museums and Types_ObjectId because it is a refrence 
+      { $set: { museums: museumByCity[cityName] } }
+    )
+  });
+
+  Promise.all(updatedCityPromises)
+      .then( () => {
+        mongoose.connection.close();
+      })
+      .catch( (err) => console.log(err));
+
+  console.log("museumCityNames", museumCityNames);
+
+  console.log("Inserted museums : ", insertedMuseums.length);
+
+})
+.catch(err => console.log(err));
+

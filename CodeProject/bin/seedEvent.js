@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const Event = require("./../models/EventModel");
+const City = require("./../models/CitiesModel");
 
 // Create schema for the city
 const event = [
@@ -11,12 +12,12 @@ const event = [
     name: "Fiesta de Gracia",
     type: "Party",
     rating: 8,
-    contact: [
+    contact: 
       {
-        addres: "Tolo",
+        address: "Barcelona",
         phone: 666994499
       }
-    ],
+    ,
     web:
       "https://www.barcelona-tourist-guide.com/es/acontecimientos/gracia-festival/gracia-festival-barcelona.html",
     description: `
@@ -36,12 +37,12 @@ const event = [
     name: "Sonar Music festival",
     type: "Festival",
     rating: 9,
-    contact: [
+    contact: 
       {
-        addres: "Barcelona",
+        address: "Barcelona",
         phone: 677332233
       }
-    ],
+    ,
     web: "https://sonar.es/",
     description: `
         Sonar Music Festival in Barcelona has grown from strength to strength and 
@@ -64,7 +65,7 @@ const event = [
 //     rating: Number,
 //     contact: [
 //       {
-//         addres: String,
+//         address: String,
 //         phone: Number
 //       }
 //     ],
@@ -90,11 +91,51 @@ mongoose
 .then(()=>{
     return Event.create(event);
 })
-.then( (insertedSchema) => {
-    console.log("Inserted Cities : ", insertedSchema.length);
-    mongoose.connection.close();
-    
-})
-.catch( (err) => console.log(err));
+.then( (insertedevents) => {
+  console.log("Este base de datos >>>>>>", insertedevents);
 
-// module.exports = Event;
+  // Create empty object to serve as the index of cities
+  // events is returned after event.create()
+  const eventByCity = {};
+
+  // Create property names in eventByCity for each city
+  // insertedevents.forEach((event) => {
+
+  insertedevents.forEach(event => {
+    const cityName = event.contact.address;
+
+    if (!eventByCity[cityName]) {
+      eventByCity[cityName] = [];
+      eventByCity[cityName].push(event._id);
+    } else {
+      eventByCity[cityName].push(event._id);
+    }
+  });
+
+  // Check if we have object with city names and ids
+  console.log(eventByCity);
+
+  // Create an array of the key names (representing cities)
+  const eventCityNames = Object.keys(eventByCity);
+
+  const updatedCityPromises = eventCityNames.map(cityName => {
+
+    return City.updateOne(
+      { name: cityName },
+      // should be in collection events and Types_ObjectId because it is a refrence 
+      { $set: { events: eventByCity[cityName] } }
+    )
+  });
+
+  Promise.all(updatedCityPromises)
+      .then( () => {
+        mongoose.connection.close();
+      })
+      .catch( (err) => console.log(err));
+
+  console.log("eventCityNames", eventCityNames);
+
+  console.log("Inserted events : ", insertedevents.length);
+
+})
+.catch(err => console.log(err));

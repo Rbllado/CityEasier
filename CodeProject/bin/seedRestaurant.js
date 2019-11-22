@@ -86,6 +86,7 @@ mongoose
 
     // Create property names in restaurantByCity for each city
     // insertedRestaurants.forEach((restaurant) => {
+
     insertedRestaurants.forEach(restaurant => {
       const cityName = restaurant.contact.address;
 
@@ -102,22 +103,6 @@ mongoose
 
     // Create an array of the key names (representing cities)
     const restaurantCityNames = Object.keys(restaurantByCity);
-
-    // ["Barcelona", "Paris"]
-    // for each city name find city, and push the ids from the restaurantByCity
-
-    // restaurantCityNames.forEach(cityName => {
-
-    //   restaurantByCity[cityName].forEach(cadaId => {
-    //     console.log("IDSOLO",cadaId);
-    //     City.findOneAndUpdate(
-        
-    //       { name: cityName },
-    //       // should be in collection restaurants and Types_ObjectId because it is a refrence 
-    //       { $set: { restaurants: mongoose.Types.ObjectId(cadaId) } }
-    //     );
-    //   });
-    // });
 
     const updatedCityPromises = restaurantCityNames.map(cityName => {
 
@@ -140,5 +125,3 @@ mongoose
 
   })
   .catch(err => console.log(err));
-
-// module.exports = Restaurant;

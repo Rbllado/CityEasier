@@ -8,10 +8,10 @@ const museumModel = new Schema({
     name: String,
     type: String,
     rating: Number,
-    contact: [{
-      addres: String,
+    contact: {
+      address: String,
       phone: Number
-    }],
+    },
     web: String,
     description: String,
     comments:[{
