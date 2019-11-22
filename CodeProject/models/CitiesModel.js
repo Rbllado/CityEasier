@@ -3,6 +3,8 @@ const Schema = mongoose.Schema;
 
 
 
+
+
 // Create schema for the city
 const cityModel = new Schema({
 

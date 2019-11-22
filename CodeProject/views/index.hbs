@@ -12,14 +12,14 @@
 <div>
     <h2>Make your stay Easier</h2>
     <input type="text" name="search">
+    <br>
 </div>
 
 <div class="list-cities">
 
-    <a href="city/barcelona">Barcelona</a>
-    <a href="city/london">London</a>
-    <a href="city/naples">Naples</a>
-    <a href="city/paris">Paris</a>
+    {{#each allCitiesFromDB}}
+    <a href="city/{{this.name}}">{{this.name}}</a>
+    {{/each}}
 
 </div>
 

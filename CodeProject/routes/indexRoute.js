@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
+const City = require("./../models/CitiesModel");
+
 
 // If we have localhost:3000/login we are going to authRoute.js
 const auth = require("./authRoute");
@@ -26,7 +28,12 @@ router.use("/singleplace", singlePlace);
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  City.find()
+  .then( (allCitiesFromDB) =>{
+    res.render('index', { allCitiesFromDB });
+
+  })
+  .catch( (err) => console.log(err));
 });
 
 module.exports = router;
