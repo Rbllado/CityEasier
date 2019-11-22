@@ -7,6 +7,8 @@ const auth = require("./authRoute");
 const city = require("./cityRoute");
 const placeType = require("./placeTypeRoute");
 const singlePlace = require("./singlePlaceRoute");
+const privateEdit = require("./editProfileRoute");
+const privateProfile = require("./profileRoute")
 // const signUp = require("./authRoute");
 
 
@@ -18,6 +20,9 @@ router.use("/placetype", placeType);
 
 router.use("/singleplace", singlePlace);
 
+router.use("/private/edit", privateEdit);
+
+router.use("/private/profile", privateProfile);
 
 
 // router.use("/auth", signUp);
