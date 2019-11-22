@@ -1,6 +1,4 @@
-// Done it, we need try
-
-
+// It is missing to enter the value Id fromt restaurant, museum, hotel, events
 const mongoose = require("mongoose");
 
 const Cities = require("./../models/CitiesModel");
@@ -33,7 +31,7 @@ const cities = [
 ];
 
 mongoose
-.connect("mongodb://localchost:27017/CityEasier", {
+.connect("mongodb://localhost:27017/CityEasier", {
     useNewUrlParser: true
 })
 .then(()=>{

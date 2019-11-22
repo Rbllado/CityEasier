@@ -16,7 +16,7 @@ const eventModel = new Schema({
     description: String,
     comments:[{
       name: String,
-      date: Date,
+      date: {type: Date, default: Date.now },
       comment: String
     }]
 });

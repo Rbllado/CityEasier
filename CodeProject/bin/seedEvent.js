@@ -6,7 +6,7 @@ const Schema = mongoose.Schema;
 const Event = require("./../models/EventModel");
 
 // Create schema for the city
-const eventModel = new Schema(
+const event = [
   {
     name: "Fiesta de Gracia",
     type: "Party",
@@ -26,7 +26,7 @@ const eventModel = new Schema(
     comments: [
       {
         name: "Barcelona",
-        date: "20.11.2018",
+        date: "2019-11-14",
         comment: "DE puta madre"
       }
     ]
@@ -52,7 +52,7 @@ const eventModel = new Schema(
     comments: [
       {
         name: "Noa",
-        date: "10.12.2019",
+        date: "2019-11-14",
         comment: "Amazing"
       }
     ]
@@ -78,23 +78,23 @@ const eventModel = new Schema(
 //       }
 // ]
 //   }
-);
+];
 
 
 
 
-// mongoose
-// .connect("mongodb://localchost:27017/CityEasier", {
-//     useNewUrlParser: true
-// })
-// .then(()=>{
-//     return Event.create(cities);
-// })
-// .then( (insertedCities) => {
-//     console.log("Inserted Cities : ", insertedCities.length);
-//     mongoose.connection.close();
+mongoose
+.connect("mongodb://localhost:27017/CityEasier", {
+    useNewUrlParser: true
+})
+.then(()=>{
+    return Event.create(event);
+})
+.then( (insertedSchema) => {
+    console.log("Inserted Cities : ", insertedSchema.length);
+    mongoose.connection.close();
     
-// })
-// .catch( (err) => console.log(err));
+})
+.catch( (err) => console.log(err));
 
-module.exports = Event;
+// module.exports = Event;

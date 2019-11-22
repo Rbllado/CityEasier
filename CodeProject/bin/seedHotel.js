@@ -3,10 +3,10 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const Event = require("./../models/EventModel");
+const Hotel = require("./../models/HotelModel");
 
 // Create schema for the city
-const eventModel = new Schema(
+const hotel = [
   {
     name: "CATALONIA BORN",
     type: "Hotel",
@@ -26,7 +26,7 @@ const eventModel = new Schema(
     comments: [
       {
         name: "Michal",
-        date: "20.11.2020",
+        date: "2020-11-20",
         comment: "Gran hotel"
       }
     ]
@@ -47,7 +47,7 @@ const eventModel = new Schema(
     comments: [
       {
         name: "clara",
-        date: "10.6.2017",
+        date: "2017-6-10",
         comment: "Normal"
       }
     ]
@@ -73,23 +73,23 @@ const eventModel = new Schema(
 //       }
 // ]
 //   }
-);
+];
 
 
 
 
-// mongoose
-// .connect("mongodb://localchost:27017/CityEasier", {
-//     useNewUrlParser: true
-// })
-// .then(()=>{
-//     return Event.create(cities);
-// })
-// .then( (insertedCities) => {
-//     console.log("Inserted Cities : ", insertedCities.length);
-//     mongoose.connection.close();
+mongoose
+.connect("mongodb://localhost:27017/CityEasier", {
+    useNewUrlParser: true
+})
+.then(()=>{
+    return Hotel.create(hotel);
+})
+.then( (insertedHotel) => {
+    console.log("Inserted Cities : ", insertedHotel.length);
+    mongoose.connection.close();
     
-// })
-// .catch( (err) => console.log(err));
+})
+.catch( (err) => console.log(err));
 
-module.exports = Hotel;
+// module.exports = Hotel;
