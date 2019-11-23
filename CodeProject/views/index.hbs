@@ -1,4 +1,4 @@
-<nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
     <h2>CityEasier</h2>
     <ul>
         <li> <a href="/"> Home</a></li>
@@ -8,8 +8,7 @@
 </nav>
 
 
-
-<div>
+<div class="">
     <h2>Make your stay Easier</h2>
     <input type="text" name="search">
     <br>
@@ -18,12 +17,14 @@
 <div class="list-cities">
 
     {{#each allCitiesFromDB}}
+    <li>
     <a href="city/{{this.name}}">{{this.name}}</a>
+    </li>
     {{/each}}
 
 </div>
 
-<footer>
+<footer class="footer-copyright text-center py-3">
 
     <h3>Copyright</h3>
     <p>Michal</p>

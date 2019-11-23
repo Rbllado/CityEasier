@@ -8,7 +8,15 @@
 
 {{#each detailRestaurant}}
 
-<li><a href="/singleplace/placename">{{this.restaurants}}</a></li>
+{{!-- <h3><a href="{{this.restaurants}}">Name of restaurant</a></h3> --}}
+
+<div class="one-restaurant"> 
+    <img src="" alt="Photo of restaurant">
+    <h3><a href="/singleplace/placename">Name of restaurant</a></h3>
+    <p>Rating : </p>
+    <p>Type cuisine :</p>
+    <p>City: </p>
+</div>
 
 {{/each}}
 
