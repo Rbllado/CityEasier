@@ -10,20 +10,12 @@ router.get("/barcelona", function(req, res, next) {
 
   City.find({ name: "Barcelona" })
     .then(city => {
+      
       res.render("city", { city });
     })
     .catch(err => console.log(err));
 
-  // .populate("restaurants")
-
-  // .then( (arrayREstaurantCollection) => {
-  //   console.log(arrayREstaurantCollection);
-
-  //   res.render("city", {arrayREstaurantCollection});
-
-  // } )
-  // .catch( (err) => console.log(err));
-});
+  });
 
 /* GET home page. */
 router.get("/naples", function(req, res, next) {

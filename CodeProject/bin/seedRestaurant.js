@@ -11,6 +11,7 @@ const restaurants = [
     name: "Anita Flow",
     type: "Spanish",
     rating: 6,
+    img:  "https://u.tfstatic.com/restaurant_photos/743/503743/169/612/anita-flow-vista-del-interior-fb0eb.jpg", //con url is working, with refrence to images not.
     contact: {
       address: "Barcelona",
       phone: 666834384
@@ -33,6 +34,7 @@ const restaurants = [
     name: "RAO",
     type: "Spanish",
     rating: 8,
+    img:  "./../images/rao.jpg",
     contact: {
       address: "Barcelona",
       phone: 677335678
@@ -54,6 +56,7 @@ const restaurants = [
     name: "Cuisine Paris",
     type: "asian",
     rating: 8,
+    img:  "./../images/CuisineParis.jpg",
     contact: {
       address: "Paris",
       phone: 677636262

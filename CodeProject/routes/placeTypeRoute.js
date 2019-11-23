@@ -1,34 +1,53 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
+const City = require("./../models/CitiesModel");
 
+/* GET localhost3000/placetype/:nombreCiudad/restaurantes. */
+// Populate is not working, we need to fix it
+router.get("/:nameCity/restaurants", function(req, res, next) {
+  City.find({ name: req.params.nameCity })
+    // .then( (city) => { console.log("Que ciudad : ", city)
+    //  })
+    .populate({
+      path: "city.restaurants",
+      model: "City"
+      // ("Restaurant")
+    })
+    .then(detailRestaurant => {
+      // console.log(detailRestaurant[0].restaurants);
+      res.render("placeType", { detailRestaurant });
+    })
+    .catch(err => console.log(err));
+});
 
+router.get("/:nameCity/museums", function(req, res, next) {
+  City.find({ name: req.params.nameCity })
+    .populate("Museum")
+    .populate('City')
+    .then(detailMuseum => {
+      res.render("placeType", { detailMuseum });
+    })
+    .catch(err => console.log(err));
+});
 
-/* GET localhost3000/placetype/. */
-router.get('/restaurants', function(req, res, next) {
-    // Conectar con la base de datos, y sacar valor por nombre
-    // function que conecte con la base de datos, hacer un find() --> y que sea el nombre barcelona. -->restuarantes
-    res.render("placeType");
-  });
+router.get("/:nameCity/events", function(req, res, next) {
+  City.find({ name: req.params.nameCity })
 
-  router.get('/museums', function(req, res, next) {
-    // Conectar con la base de datos, y sacar valor por nombre
-    // function que conecte con la base de datos, hacer un find() --> y que sea el nombre barcelona.
-    res.render("placeType");
-  });
+    .populate("Event")
+    .then(detailEvents => {
+      res.render("placeType", { detailEvents });
+    })
+    .catch(err => console.log(err));
+});
 
+router.get("/:nameCity/hotels", function(req, res, next) {
+  City.find({ name: req.params.nameCity })
 
-  router.get('/events', function(req, res, next) {
-    // Conectar con la base de datos, y sacar valor por nombre
-    // function que conecte con la base de datos, hacer un find() --> y que sea el nombre barcelona.
-    res.render("placeType");
-  });
+    .populate("Hotel")
+    .then(detailHotel => {
+      res.render("placeType", { detailHotel });
+    })
+    .catch(err => console.log(err));
+});
 
-  router.get('/hotels', function(req, res, next) {
-    // Conectar con la base de datos, y sacar valor por nombre
-    // function que conecte con la base de datos, hacer un find() --> y que sea el nombre barcelona.
-    res.render("placeType");
-  });
-  
-  
-
-  module.exports = router;
+module.exports = router;
