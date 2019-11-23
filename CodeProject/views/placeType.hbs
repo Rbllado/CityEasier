@@ -1,0 +1,28 @@
+{{!-- Here will be the page that is in a city and show the category --> nombre barcelona y datos categoria --}}
+
+{{!-- <h2>Place Type page {{city.[0].name}}</h2> --}}
+
+<h2>Place Type page {{detailRestaurant}}</h2>
+
+<h2>Place Type page {{detailMuseum}}</h2>
+
+{{#each detailRestaurant}}
+
+{{!-- <h3><a href="{{this.restaurants}}">Name of restaurant</a></h3> --}}
+
+<div class="one-restaurant"> 
+    <img src="" alt="Photo of restaurant">
+    <h3><a href="/singleplace/placename">Name of restaurant</a></h3>
+    <p>Rating : </p>
+    <p>Type cuisine :</p>
+    <p>City: </p>
+</div>
+
+{{/each}}
+
+
+{{#each detailMuseum}}
+
+<li><a href="/singleplace/placename">{{this.museums}}</a></li>
+
+{{/each}}
