@@ -1,1 +1,19 @@
 {{!-- here is going favourites also. --}}
+
+<div class="profile">
+    <img src="" alt="">
+    <h2>Welcome</h2>
+    <h3>{{this.username}}</h3>
+    <p>Your favorites:</p>
+</div>
+
+
+{{#each arrayFavourites }}
+<div>
+    <img src="" alt="">
+    <p>{{this.name}}</p>
+    <p>{{this.rating}}</p>
+    <p>{{this.address}}</p>
+    {{!-- like button of favorites --}}
+</div>
+{{/each}}
