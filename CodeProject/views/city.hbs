@@ -1,20 +1,11 @@
 {{!--  --}}
 
-<h2>you are in {{city.[0].name}}</h2>
+<h2>You are in {{city.[0].name}}</h2>
 
-<a href="/placetype/{{city.[0].name}}/restaurants">Restaurantes</a>
-<a href="/placetype/{{city.[0].name}}/museums">museums</a>
-<a href="/placetype/{{city.[0].name}}/events">Events</a>
-<a href="/placetype/{{city.[0].name}}/hotels">Hotels</a>
-
-
-
-{{#each arrayREstaurantCollection}}
 
 {{!-- <h2>{{this.restaurants.[0].name}}</h2> --}}
 
-<h3>Restaurantes</h3>
-<h3>Museums</h3>
-<h3>Events</h3>
-<h3>Hotels</h3>
-{{/each}}
+<h3><a href="/placetype/{{city.[0].name}}/restaurants">Restaurantes</a></h3>
+<h3><a href="/placetype/{{city.[0].name}}/museums">museums</a></h3>
+<h3><a href="/placetype/{{city.[0].name}}/events">Events</a></h3>
+<h3><a href="/placetype/{{city.[0].name}}/hotels">Hotels</a></h3>
