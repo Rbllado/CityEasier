@@ -2,13 +2,31 @@
 
 {{!-- <h2>Place Type page {{city.[0].name}}</h2> --}}
 
-<h2>Place Type page {{detailRestaurant}}</h2>
+<h2>Tipo array: {{detailRestaurant}}</h2>
 
-<h2>Place Type page {{detailMuseum}}</h2>
+<h4>Name restaurant: {{detailRestaurant.[0].restaurants.[0].name}}</h4>
+<h4>Name restaurant: {{detailRestaurant.[0].restaurants.[0].type}}</h4>
 
+{{!-- .[0].restaurants --}}
 {{#each detailRestaurant}}
 
-{{!-- <h3><a href="{{this.restaurants}}">Name of restaurant</a></h3> --}}
+
+    <img src="{{this.restaurants.[0].img}}" alt="Photo of restaurant">
+    <h3><a href="">Name: {{this.restaurants.[0].name}}</a></h3>
+    <p>Rating : {{this.restaurants.[0].rating}}</p>
+    <p>Type cuisine :  {{this.restaurants.[0].type}}</p>
+    <p>City: {{this.restaurants.[0].contact.address}}</p>
+
+
+{{/each}}
+
+{{!-- <h2>Place Type page {{detailRestaurant.[0].restaurants.[0]}}</h2> --}}
+
+{{!-- <h2>Place Type page {{detailMuseum}}</h2> --}}
+
+{{!-- {{#each detailRestaurant}}
+
+<h3><a href="{{this.restaurants}}">Name of restaurant</a></h3>
 
 <div class="one-restaurant"> 
     <img src="" alt="Photo of restaurant">
@@ -25,4 +43,4 @@
 
 <li><a href="/singleplace/placename">{{this.museums}}</a></li>
 
-{{/each}}
+{{/each}} --}}
