@@ -24,7 +24,6 @@ router.use("/singleplace", singlePlace);
 
 // router.use("/private/edit", privateEdit);
 
-//Michal - I coment the line below as it blocks sever to run
 // router.use("/private/profile", privateProfile);
 
 
