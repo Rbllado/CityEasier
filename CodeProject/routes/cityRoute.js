@@ -38,6 +38,15 @@ router.get("/paris", function(req, res, next) {
     .catch(err => console.log(err));
 });
 
+router.get("/warsaw", function(req, res, next) {
+  // We connect to the databse and find the name from city that we have in the body
+  City.find({ name: "Warsaw" })
+    .then(city => {
+      res.render("city", { city });
+    })
+    .catch(err => console.log(err));
+});
+
 //   /* GET localhost3000/city. */
 // router.get('/london', function(req, res, next) {
 //     // Conectar con la base de datos, y sacar valor por nombre

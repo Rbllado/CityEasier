@@ -227,3 +227,44 @@ footer p {
   color: #175d79;
   text-align: center;
 }
+
+/*Single place card*/
+.single-place-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.single-place-wrapper h2 {
+  font-size: 5rem;
+  margin: 3rem auto;
+}
+
+.single-place-wrapper img {
+  max-width: 600px;
+  margin: 3rem auto;
+}
+
+.single-place-wrapper h4 {
+  font-size: 2.7rem;
+}
+
+.single-place-wrapper button {
+  max-width: 600px;
+  font-weight: bold;
+  padding: 1rem 3rem;
+  margin: 4rem auto;
+  line-height: 4rem;
+  font-size: 3.5rem;
+  background-color: rgb(233, 146, 146);
+}
+
+.single-place-wrapper h5 a {
+  font-size: 2.6rem;
+  text-decoration: underline;
+  
+}
+.single-place-wrapper h5 {
+  margin: 1rem auto;
+}
