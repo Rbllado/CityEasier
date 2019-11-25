@@ -56,7 +56,7 @@ const restaurants = [
     name: "Cuisine Paris",
     type: "asian",
     rating: 8,
-    img:  "./../images/CuisineParis.jpg",
+    img:  "/images/CuisineParis.jpg",
     contact: {
       address: "Paris",
       phone: 677636262

@@ -5,6 +5,11 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require("mongoose");
 
+require('dotenv').config();
+
+
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 
 var indexRouter = require('./routes/indexRoute');
 var usersRouter = require('./routes/usersRoute');
@@ -25,6 +30,22 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+
+// Before the routes
+// SESSION ( & COOKIES ) MIDDLEWARE   -- req.session.currentUser
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    // cookie: { maxAge: 3600000 } // 1 hour
+    resave: true,
+    saveUninitialized: false,
+    store: new MongoStore({
+      mongooseConnection: mongoose.connection,
+      ttl: 60 * 60 * 24 * 7, // Default - 14 days
+    }),
+  }),
+);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
