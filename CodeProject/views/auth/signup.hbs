@@ -1,18 +1,20 @@
-<h1>Sing up</h1>
+<div class="signup-wrapper">
+    <h1>Sing up</h1>
 
-<form action='/auth/signup' method='POST'>
+    <form class="signup-form" action='/auth/signup' method='POST'>
 
-    <label for=''>Username</label>
-    <input type='text' name='username'>
+        <label for=''>Username</label>
+        <input type='text' name='username'>
 
-    <label for=''>Email</label>
-    <input type='email' name='email'>
+        <label for=''>Email</label>
+        <input type='email' name='email'>
 
-    <label for=''>Password</label>
-    <input type='password' name='password'>
+        <label for=''>Password</label>
+        <input type='password' name='password'>
 
-    <button type='submit'>Submit</button>
-</form>
+        <button type='submit'>Sign up</button>
+    </form>
+</div>
 
 {{!-- error message display --}}
 

@@ -1,21 +1,23 @@
-<h1>Login Page</h1>
+<div class="signup-wrapper">
+    <h1>Login</h1>
 
-<form action='/auth/login' method='POST'>
+    <form class="signup-form" action='/auth/login' method='POST'>
 
-    <label for=''>Username</label>
-    <input type='text' name='username'>
+        <label for=''>Username</label>
+        <input type='text' name='username'>
 
-    <label for=''>Password</label>
-    <input type='password' name='password'>
+        <label for=''>Password</label>
+        <input type='password' name='password'>
 
-    <button type='submit'>LOGIN</button>
-    {{!-- coment test --}}
+        <button type='submit'>Login</button>
+        {{!-- coment test --}}
 
-    <p class="account-message">
-        Don't have an account? <a href="/signup">Sign up</a>
-    </p>
+        <p class="account-message">
+            Don't have an account? <a href="/auth/signup">Sign up</a>
+        </p>
 
-</form>
+    </form>
+</div>
 
 {{!-- error message display --}}
 
