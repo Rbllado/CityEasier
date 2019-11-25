@@ -10,11 +10,12 @@ const rest = require("./../models/RestaurantModel");
 // function que conecte con la base de datos, --> take value from name
 
 /* GET localhost3000/placetype/. */
-router.get('/placename', function(req, res, next) {
+router.get('/:nameRestaurant', function(req, res, next) {
 
-  rest.find({name: "Anita Flow"})
+  rest.find({name: req.params.nameRestaurant})
   .then( (restaurant) => {
-    console.log(restaurant);
+
+    
     
     res.render("singlePlace", {restaurant});
   })
