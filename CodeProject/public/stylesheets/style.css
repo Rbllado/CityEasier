@@ -4,7 +4,7 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: #00b7ff;
 }
 
 html,
@@ -18,7 +18,7 @@ body {
 
 #main {
   overflow: auto;
-  padding-bottom: 150px;
+  padding-bottom: 3rem;
   /* this needs to be bigger than footer height*/
 }
 
@@ -29,14 +29,25 @@ footer p {
   margin: 30px auto 10px;
 }
 
-
-
-
 /* INDEX/HOME */
 .list-cities {
   display: flex;
   flex-direction: column;
   height: 50vh;
+}
+.list-cities li {
+  font-size: 4rem;
+  color: blue;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  list-style: none;
+  padding: 2rem 4rem;
+  border-bottom: 2px solid blue;
+}
+.list-cities li a {
+  margin: 3rem auto;
+  padding: 3rem;
 }
 
 .home-search {
@@ -53,7 +64,6 @@ footer p {
   background-color: rgb(204, 224, 243);
 }
 
-
 /* SIGNUP VIEW */
 .signup-wrapper h1 {
   font-size: 3rem;
@@ -62,7 +72,7 @@ footer p {
 }
 
 .signup-wrapper {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   height: 80vh;
   display: flex;
   flex-direction: column;
@@ -102,16 +112,26 @@ footer p {
   text-transform: uppercase;
   padding: 0.5em 2em;
   border: 2px solid #175d79;
-  transition: .02s .2s cubic-bezier(.1, 0, .1, 1);
-
+  transition: 0.02s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
 }
 
 .signup-form p {
   font-size: 2rem;
-
 }
 
+/* CITY/YOU ARE IN */
+.city-wrapper h2 {
+  font-size: 3rem;
+  color: #175d79;
+  text-align: center;
+  margin: 5rem auto;
+}
 
-
-
-footer {}
+.city-wrapper h3 {
+  font-size: 2.4rem;
+  padding: 2rem 4rem;
+  background-color: rgb(205, 209, 235);
+  text-decoration: none;
+  text-align: center;
+  margin: 4rem auto;
+}

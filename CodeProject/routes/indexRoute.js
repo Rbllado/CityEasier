@@ -9,8 +9,8 @@ const auth = require("./authRoute");
 const city = require("./cityRoute");
 const placeType = require("./placeTypeRoute");
 const singlePlace = require("./singlePlaceRoute");
-const privateEdit = require("./editProfileRoute");
-const privateProfile = require("./profileRoute")
+// const privateEdit = require("./editProfileRoute");
+// const privateProfile = require("./profileRoute")
 // const signUp = require("./authRoute");
 
 
@@ -22,10 +22,10 @@ router.use("/placetype", placeType);
 
 router.use("/singleplace", singlePlace);
 
-router.use("/private/edit", privateEdit);
+// router.use("/private/edit", privateEdit);
 
 //Michal - I coment the line below as it blocks sever to run
-//router.use("/private/profile", privateProfile);
+// router.use("/private/profile", privateProfile);
 
 
 // router.use("/auth", signUp);
@@ -33,13 +33,15 @@ router.use("/private/edit", privateEdit);
 
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
   City.find()
-  .then( (allCitiesFromDB) =>{
-    res.render('index', { allCitiesFromDB });
+    .then((allCitiesFromDB) => {
+      res.render('index', {
+        allCitiesFromDB
+      });
 
-  })
-  .catch( (err) => console.log(err));
+    })
+    .catch((err) => console.log(err));
 });
 
 module.exports = router;
