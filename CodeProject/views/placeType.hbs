@@ -8,7 +8,7 @@
     {{!-- For each museum in Barcelona we will have all the information below --}}
     {{#each arrayMuseumInCity}}
 
-    <h2><a href="">Name: {{this.name}}</a></h2>
+    <h2><a href="/singleplace/{{this.name}}">Name: {{this.name}}</a></h2>
     <img src="{{this.img}}" alt="Photo of restaurant">
     <h4>Rating : {{this.rating}}</h4>
     <h4>Type: {{this.type}}</h4>
@@ -22,7 +22,7 @@
     <div class="place-type-one">
         <img src="{{this.img}}" alt="Photo of restaurant">
         <div class="place-description">
-            <h4><a href="">Name: {{this.name}}</a></h4>
+            <h4><a href="/singleplace/{{this.name}}">Name: {{this.name}}</a></h4>
             <p>Rating : {{this.rating}}</p>
             <p>Type cuisine : {{this.type}}</p>
             <p>City: {{this.contact.address}}</p>
@@ -33,7 +33,7 @@
     {{!-- For each event in Barcelona we will have all the information below --}}
     {{#each arrayEventInCity}}
 
-    <h2><a href="">Name: {{this.name}}</a></h2>
+    <h2><a href="/singleplace/{{this.name}}">Name: {{this.name}}</a></h2>
     <img src="{{this.img}}" alt="Photo of restaurant">
     <h4>Rating : {{this.rating}}</h4>
     <h4>Type: {{this.type}}</h4>
