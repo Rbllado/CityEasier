@@ -23,22 +23,34 @@ const isLoggedIn = (req, res, next) => {
     }  
   }
   
+
+//   Aqui tratar de mostrar museos, eventos y hoteles también
   router.get("/", isLoggedIn, (req, res, next) => {
     const userId = req.session.currentUser._id;
+
 
     User.findById(userId, (err, user) =>{
         Restaurant.populate(user, {path: "favorites"}, (err, restaurantByCity) =>{
 
             console.log(restaurantByCity);
             
-
             const arrayrestaurantsCity = restaurantByCity.favorites;  
-
-            console.log("Holaaaa: ", arrayrestaurantsCity);
-
+            // Maybe with next ???
             res.render("private/profile", {arrayrestaurantsCity});
         } )
     })
+
+    User.findById(userId, (err, user) =>{
+        Museum.populate(user, {path: "favorites"}, (err, museumByCity) =>{
+
+            console.log(museumByCity);
+            
+            const arraymuseumsCity = museumByCity.favorites;  
+
+            res.render("private/profile", {arraymuseumsCity});
+        } )
+    })
+
 
   });
   

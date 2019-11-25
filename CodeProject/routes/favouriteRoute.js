@@ -9,11 +9,12 @@ router.get("/", (req, res, next) =>{
     // Get the id from req.query
     const { id } = req.query;
 
-
+    // Id from  the currentUser
     const userId = req.session.currentUser._id
 
-    // updateOne  User  -> id is  on req.session.currentUSer
+    // updateOne  User  -> id is on req.session.currentUSer
 
+    // search by Id the user and push into favorites the ID from the element
     User.updateOne({ _id: userId}, { $push: { favorites: id}})
       .then( () => {
           res.status(200).send({ message: 'Bruh'})
