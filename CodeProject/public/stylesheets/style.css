@@ -142,6 +142,34 @@ footer p {
   font-size: 2rem;
 }
 
+/*EDIT PAGE as got more inputs*/
+.edit input {
+  margin: 1rem auto;
+}
+
+/*PROFILE page, the rest with place type*/
+.profile h2 {
+  font-size: 6rem;
+  color: #175d79;
+  text-align: center;
+  margin: 5rem auto 2rem;
+}
+
+.profile h3 {
+  font-weight: bold;
+  color: #1e5e77;
+  text-align: center;
+  margin: 2rem auto 5rem;
+}
+
+.profile p {
+  font-size: 3.8rem;
+  color: #2319ad;
+  text-align: center;
+  margin: 10rem auto 3rem;
+}
+
+
 /* CITY/YOU ARE IN */
 .city-wrapper h2 {
   font-size: 3rem;
@@ -159,7 +187,7 @@ footer p {
   margin: 4rem auto;
 }
 
-/*PLACE-TYPE */
+/*PLACE-TYPE FAVOURITES*/
 .place-type-wrapper h3 {
   font-size: 3rem;
   color: #175d79;
@@ -186,4 +214,16 @@ footer p {
 .place-type-one img {
   width: 45%;
   margin-right: 2rem;
+}
+
+.place-type-one h2 {
+  font-size: 2.6rem;
+  color: #175d79;
+  text-align: center;
+}
+
+.place-type-one p {
+  font-size: 2.2rem;
+  color: #175d79;
+  text-align: center;
 }

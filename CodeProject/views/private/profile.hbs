@@ -10,21 +10,25 @@
 
 {{!-- Restaurantes --}}
 {{#each arrayrestaurantsCity }}
-<div>
+<div class="place-type-one">
     <img src="{{this.img}}" alt="">
-    <p>{{this.name}}</p>
-    <p>{{this.rating}}</p>
-    <p>{{this.address}}</p>
-    {{!-- like button of favorites --}}
+    <div class="place-description">
+        <h2>Name: {{this.name}}</h2>
+        <p>Rating: {{this.rating}}</p>
+        <p>Type: {{this.address}}</p>
+        {{!-- like button of favorites --}}
+    </div>
 </div>
 {{/each}}
 
 {{#each arraymuseumsCity }}
-<div>
+<div class="place-type-one">
     <img src="{{this.img}}" alt="">
-    <p>{{this.name}}</p>
-    <p>{{this.rating}}</p>
-    <p>{{this.address}}</p>
-    {{!-- like button of favorites --}}
+    <div class="place-description">
+        <h2>Name: {{this.name}}</h2>
+        <p>Rating: {{this.rating}}</p>
+        <p>Type: {{this.address}}</p>
+        {{!-- like button of favorites --}}
+    </div>
 </div>
 {{/each}}
