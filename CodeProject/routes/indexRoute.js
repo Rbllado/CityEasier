@@ -22,9 +22,9 @@ router.use("/placetype", placeType);
 
 router.use("/singleplace", singlePlace);
 
-router.use("/private/edit", privateEdit);
+// router.use("/private/edit", privateEdit);
 
-router.use("/private/profile", privateProfile);
+// router.use("/private/profile", privateProfile);
 
 
 // router.use("/auth", signUp);
