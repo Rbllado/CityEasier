@@ -9,13 +9,11 @@ const rest = require("./../models/RestaurantModel");
 // Conectar con la base de datos, y sacar valor por nombre
 // function que conecte con la base de datos, --> take value from name
 
-/* GET localhost3000/placetype/. */
-router.get('/placename', function(req, res, next) {
+/* GET localhost3000/singlePlace/. */
+router.get('/:nameRestaurant', function(req, res, next) {
 
-  rest.find({name: "Anita Flow"})
+  rest.find({name: req.params.nameRestaurant})
   .then( (restaurant) => {
-    console.log(restaurant);
-    
     res.render("singlePlace", {restaurant});
   })
   .catch( (err) => console.log(err));
