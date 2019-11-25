@@ -40,16 +40,16 @@ const isLoggedIn = (req, res, next) => {
         } )
     })
 
-    User.findById(userId, (err, user) =>{
-        Museum.populate(user, {path: "favorites"}, (err, museumByCity) =>{
+    // User.findById(userId, (err, user) =>{
+    //     Museum.populate(user, {path: "favorites"}, (err, museumByCity) =>{
 
-            console.log(museumByCity);
+    //         console.log(museumByCity);
             
-            const arraymuseumsCity = museumByCity.favorites;  
+    //         const arraymuseumsCity = museumByCity.favorites;  
 
-            res.render("private/profile", {arraymuseumsCity});
-        } )
-    })
+    //         res.render("private/profile", {arraymuseumsCity});
+    //     } )
+    // })
 
 
   });

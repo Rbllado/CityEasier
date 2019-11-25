@@ -4,6 +4,8 @@ var express = require("express");
 var router = express.Router();
 const User = require("./../models/UserModel");
 
+
+
 // 0 - Require bcrypt
 const bcrypt = require("bcrypt");
 // 1 - Specify how many salt rounds
@@ -108,22 +110,32 @@ router.post("/login", (req, res, next) => {
 // Mirar porque no funciona --> profile is like not working with the boolean and _id not working now
 router.get("/profile", (req, res, next) => {
 
-  const userId = req.session.currentUser._id;
+  // console.log("que coño es: ",req.session.currentUser._id);
+console.log(req.session.currentUser);
 
-  User.findById({ _id: userId})
-      .then( () => {
-          res.status(200).send({ message: 'Encontrado'})
-      })
-      .catch( (err) => {
-        res.status(400).send(err)
-      });
+  
+  if(typeof req.session.currentUser === "undefined"){
+    
+    res.render("auth/login");
+    
+  } 
+  else{
+    const userId = req.session.currentUser._id;
+    
+    User.findById({ _id: userId })
+    .then( () => {
 
-  if (sess) {
-    // usernameId = req.session.currentUser._id;
-
-    res.render("private/profile");
-  } else {
-    res.render("auht/login");
+      // If I type redirect is working
+      res.redirect("/private/profile");
+      
+      // Me redirecciona a : http://localhost:3000/auth/profile
+      // res.render("private/profile");
+      
+    })
+    .catch( (err) => {
+      res.status(400).send(err)
+    });
+    
   }
 });
 
