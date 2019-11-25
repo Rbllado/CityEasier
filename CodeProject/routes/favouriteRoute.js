@@ -10,7 +10,7 @@ router.get("/", (req, res, next) =>{
     const { id } = req.query;
 
     // Id from  the currentUser
-    const userId = req.session.currentUser._id
+    const userId = req.session.currentUser._id;
 
     // updateOne  User  -> id is on req.session.currentUSer
 
