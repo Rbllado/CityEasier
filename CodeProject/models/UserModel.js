@@ -8,7 +8,7 @@ const userSchema = new Schema({
     username : String,
     password: String, 
     mail: String, 
-    favorites: [{type: Schema.Types.ObjectId , ref: "favourites"}]
+    favorites: [{type: Schema.Types.ObjectId , ref: "Favourite"}]
 });
 
 const User = mongoose.model("User", userSchema);
