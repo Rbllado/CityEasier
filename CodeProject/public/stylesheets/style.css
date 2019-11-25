@@ -4,7 +4,8 @@ body {
 }
 
 a {
-  color: #00b7ff;
+color: aliceblue;
+  /* color: #00b7ff; */
 }
 
 html,
@@ -49,24 +50,47 @@ footer p {
 }
 
 .list-cities li {
-  font-size: 4rem;
+  /* 4 rem */
+  font-size: 7rem;
   color: blue;
   font-weight: bold;
   text-align: center;
   text-decoration: none;
   list-style: none;
-  padding: 2rem 4rem;
+  /* 2rem */
+  padding: 3rem 4rem;
   border-bottom: 2px solid blue;
 }
 
 .list-cities li a {
   margin: 3rem auto;
-  padding: 3rem;
+  /* padding: 3rem; */
 }
 
 .list-cities li a:hover {
   color: orange;
   text-decoration: none;
+}
+
+.Barcelona{
+  background-image: url("https://tifositours.com/wp-content/uploads/2019/02/Barcelona.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 30px;
+}
+
+.Naples{
+  background-image: url("https://miro.medium.com/max/699/1*2mzNSMIfrd-v6Wzoz1XPhw.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 30px;
+}
+
+.Paris{
+  background-image: url("https://86087-590828-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2016/01/paris-fin-de-semana-1024x683.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 30px;
 }
 
 .home-search {

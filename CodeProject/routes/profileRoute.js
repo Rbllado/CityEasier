@@ -36,6 +36,7 @@ const isLoggedIn = (req, res, next) => {
             
             const arrayrestaurantsCity = restaurantByCity.favorites;  
             // Maybe with next ???
+
             res.render("private/profile", {arrayrestaurantsCity});
         } )
     })
