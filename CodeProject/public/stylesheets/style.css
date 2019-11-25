@@ -1,6 +1,6 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "Montserrat", Helvetica, Arial, sans-serif;
 }
 
 a {
@@ -16,25 +16,38 @@ body {
   min-height: 100%;
 }
 
-#main {
+/* #main {
   overflow: auto;
-  padding-bottom: 3rem;
-  /* this needs to be bigger than footer height*/
+  padding-bottom: 3rem; 
+  /* this needs to be bigger than footer height
+}*/
+
+button {
+  cursor: pointer;
 }
 
+/* logo from layout*/
+.navbar h2 {
+  font-family: 'Acme', sans-serif;
+  font-size: 3rem;
+  color: rgb(177, 177, 46);
+}
+
+/*footer layout*/
 footer p {
   font-size: 1.6rem;
   text-align: center;
   line-height: 2.4rem;
-  margin: 30px auto 10px;
+  margin: 5rem auto 2rem;
 }
 
 /* INDEX/HOME */
 .list-cities {
   display: flex;
   flex-direction: column;
-  height: 50vh;
+  /* height: 50vh; */
 }
+
 .list-cities li {
   font-size: 4rem;
   color: blue;
@@ -45,9 +58,15 @@ footer p {
   padding: 2rem 4rem;
   border-bottom: 2px solid blue;
 }
+
 .list-cities li a {
   margin: 3rem auto;
   padding: 3rem;
+}
+
+.list-cities li a:hover {
+  color: orange;
+  text-decoration: none;
 }
 
 .home-search {
@@ -69,10 +88,10 @@ footer p {
   font-size: 3rem;
   color: #175d79;
   text-align: center;
+  margin-bottom: 10rem;
 }
 
 .signup-wrapper {
-  font-family: "Montserrat", sans-serif;
   height: 80vh;
   display: flex;
   flex-direction: column;
@@ -93,26 +112,30 @@ footer p {
 .signup-form input {
   display: block;
   font-size: 3rem;
-  line-height: 3rem;
-  margin-bottom: 6rem;
+  line-height: 5rem;
+
 }
 
 .signup-form input {
-  border: 2px solid blue;
-  border-radius: 10px;
+  border: 4px solid #175d79;
+  border-radius: 15px;
+  background-color: rgb(245, 238, 238);
+  width: 40rem;
+  margin: 4rem auto;
 }
 
 .signup-form button {
   font-size: 3rem;
-
   color: #175d79;
   text-decoration: none;
   display: inline-block;
-
+  margin: 5rem auto;
+  width: 30rem;
   text-transform: uppercase;
   padding: 0.5em 2em;
-  border: 2px solid #175d79;
-  transition: 0.02s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
+  border: 5px solid #175d79;
+  border-radius: 2.5rem;
+
 }
 
 .signup-form p {
@@ -134,4 +157,33 @@ footer p {
   text-decoration: none;
   text-align: center;
   margin: 4rem auto;
+}
+
+/*PLACE-TYPE */
+.place-type-wrapper h3 {
+  font-size: 3rem;
+  color: #175d79;
+  text-align: center;
+  margin: 5rem auto;
+}
+
+.place-type-one {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2rem;
+  margin: 4rem 2rem;
+  background-color: rgba(222, 222, 222, 0.4);
+}
+
+.place-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 45%;
+}
+
+.place-type-one img {
+  width: 45%;
+  margin-right: 2rem;
 }
