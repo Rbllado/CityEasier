@@ -2,6 +2,9 @@ var express = require("express");
 var router = express.Router();
 const City = require("./../models/CitiesModel");
 const Restaurant = require("./../models/RestaurantModel");
+const Museum = require("./../models/MuseumModel");
+const Hotel = require("./../models/HotelModel");
+const Event = require("./../models/EventModel");
 
 /* GET localhost3000/placetype/:nombreCiudad/restaurantes. */
 
@@ -18,41 +21,65 @@ router.get("/:nameCity/restaurants", function(req, res, next) {
         // res.status(200).send(city);
         // console.log(detallRest);
         const arrayRestaurantInCity = restaurantsByCity[0].restaurants;
-        
+
         res.render("placeType", { arrayRestaurantInCity });
       }
     );
   });
 });
 
+// router.get("/:nameCity/:category", function(req, res, next) {
+//   // Search into the city collection in the DB, the name that we have in the url.
+//   City.find({ name: req.params.nameCity }, (err, city) => {
+//     // Restaurant collection to do the populate, inside the collections city the field restaurants
+//     Restaurant.populate(
+//       city,
+//       { path: req.params.category },
+//       (err, restaurantsByCity) => {
+//         // res.status(200).send(city);
+//         // console.log(detallRest);
+//         const arrayRestaurantInCity = restaurantsByCity[0].restaurants;
+
+//         res.render("placeType", { arrayRestaurantInCity });
+//       }
+//     );
+//   });
+// });
+
 router.get("/:nameCity/museums", function(req, res, next) {
-  City.find({ name: req.params.nameCity })
-    .populate("Museum")
-    .populate("City")
-    .then(detailMuseum => {
-      res.render("placeType", { detailMuseum });
-    })
-    .catch(err => console.log(err));
+  City.find({ name: req.params.nameCity }, (err, city) => {
+    // Restauran collection to do the populate, inside the collections city the field restaurants
+    Museum.populate(city, { path: "museums" }, (err, museumsByCity) => {
+
+      const arrayMuseumInCity = museumsByCity[0].museums;
+
+      res.render("placeType", { arrayMuseumInCity });
+    });
+  });
 });
 
 router.get("/:nameCity/events", function(req, res, next) {
-  City.find({ name: req.params.nameCity })
+  City.find({ name: req.params.nameCity }, (err, city) => {
+    // Restauran collection to do the populate, inside the collections city the field restaurants
+    Event.populate(city, { path: "events" }, (err, eventsByCity) => {
+      
+      const arrayEventInCity = eventsByCity[0].events;
 
-    .populate("Event")
-    .then(detailEvents => {
-      res.render("placeType", { detailEvents });
-    })
-    .catch(err => console.log(err));
+      res.render("placeType", { arrayEventInCity });
+    });
+  });
 });
 
 router.get("/:nameCity/hotels", function(req, res, next) {
-  City.find({ name: req.params.nameCity })
+  City.find({ name: req.params.nameCity }, (err, city) => {
+    // Restauran collection to do the populate, inside the collections city the field restaurants
+    Hotel.populate(city, { path: "hotels" }, (err, hotelsByCity) => {
+      
+      const arrayHotelInCity = hotelsByCity[0].hotels;
 
-    .populate("Hotel")
-    .then(detailHotel => {
-      res.render("placeType", { detailHotel });
-    })
-    .catch(err => console.log(err));
+      res.render("placeType", { arrayHotelInCity });
+    });
+  });
 });
 
 module.exports = router;
