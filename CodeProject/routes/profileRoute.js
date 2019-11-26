@@ -25,33 +25,69 @@ const isLoggedIn = (req, res, next) => {
   
 
 //   Aqui tratar de mostrar museos, eventos y hoteles también
+// It is only showing the Restrautant nowç
   router.get("/", isLoggedIn, (req, res, next) => {
     const userId = req.session.currentUser._id;
 
-
     User.findById(userId, (err, user) =>{
-        Restaurant.populate(user, {path: "favorites"}, (err, restaurantByCity) =>{
 
-            console.log(restaurantByCity);
+      const { favorites } = user;
+
+      const results = [];
+
+      // return a promise that when resolved returns  an array of the elements that match
+      const restaurantsPromise = Restaurant.find({ _id: { $in: favorites }});
+      const museumPromise = Museum.find({ _id: { $in: favorites }});
+      const eventPromise = Event.find({ _id: { $in: favorites }});
+      const hotelPromise = Hotel.find({ _id: { $in: favorites }});
+
+      Promise.all([restaurantsPromise, museumPromise, eventPromise, hotelPromise])
+        .then( (resolvedFavourites) => {
+          const restaurants = resolvedFavourites[0];
+          const museums = resolvedFavourites[1];
+          const events = resolvedFavourites[2];
+          const hotels = resolvedFavourites[3];
+
+          const allFavs = [...restaurants, ...museums, ...events, ...hotels]
+
+          res.render("private/profile", { allFavs });
+
+
+        })
+        .catch( (err) => {});
+
+
+
+        // Restaurant.populate(user, {path: "favorites"}, (err, restaurantByCity) =>{
             
-            const arrayrestaurantsCity = restaurantByCity.favorites;  
-            // Maybe with next ???
-            res.render("private/profile", {arrayrestaurantsCity});
+        //     var arrayrestaurantsCity = restaurantByCity.favorites;  
+        //     //res.render("private/profile", {arrayrestaurantsCity});
+        //     console.log("dfgdfg: ",arrayrestaurantsCity);
+            
+        //     Museum.populate(user, {path: "favorites"}, (err, museumByCity) =>{
+        //       const arraymuseumsCity = museumByCity.favorites; 
+
+        //       console.log("Museum: ",arrayrestaurantsCity);
+
+        //       const allFavs = [...arrayrestaurantsCity, ...arraymuseumsCity]
+    
+        //       // console.log("sdfksd: ", allFavs);
+              
+        //       res.render("private/profile", { allFavs });
+        //   } )
+
         } )
+
     })
 
-    User.findById(userId, (err, user) =>{
-        Museum.populate(user, {path: "favorites"}, (err, museumByCity) =>{
+  // });
 
-            console.log(museumByCity);
-            
-            const arraymuseumsCity = museumByCity.favorites;  
+// router.get("/", isLoggedIn, (req, res, next) => {
+    // const userId = req.session.currentUser._id;
 
-            res.render("private/profile", {arraymuseumsCity});
-        } )
-    })
+    
+  // });
 
 
-  });
   
   module.exports = router;

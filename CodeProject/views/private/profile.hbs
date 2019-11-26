@@ -9,8 +9,8 @@
 
 
 {{!-- Restaurantes --}}
-{{#each arrayrestaurantsCity }}
-<div class="place-type-one">
+{{#each allFavs }}
+<div>
     <img src="{{this.img}}" alt="">
     <div class="place-description">
         <h2>Name: {{this.name}}</h2>
@@ -20,6 +20,7 @@
     </div>
 </div>
 {{/each}}
+
 
 {{#each arraymuseumsCity }}
 <div class="place-type-one">
