@@ -31,7 +31,7 @@ const cities = [
   }
 ];
 
-mmongoose
+mongoose
 .connect(process.env.MONGODB_URI,{ useNewUrlParser: true , useUnifiedTopology: true })
 .then(()=>{
     return Cities.create(cities);
