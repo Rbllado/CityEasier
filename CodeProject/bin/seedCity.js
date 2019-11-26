@@ -2,6 +2,7 @@
 const mongoose = require("mongoose");
 
 const Cities = require("./../models/CitiesModel");
+require('dotenv').config();
 
 const cities = [
   {
@@ -31,9 +32,7 @@ const cities = [
 ];
 
 mongoose
-.connect("mongodb://localhost:27017/CityEasier", {
-    useNewUrlParser: true
-})
+ .connect(process.env.MONGODB_URI,{ useNewUrlParser: true , useUnifiedTopology: true })
 .then(()=>{
     return Cities.create(cities);
 })

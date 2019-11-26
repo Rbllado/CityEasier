@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const Hotel = require("./../models/HotelModel");
+require('dotenv').config();
 const City = require("./../models/CitiesModel");
 
 
@@ -81,10 +82,9 @@ const hotel = [
 
 
 
+
 mongoose
-.connect("mongodb://localhost:27017/CityEasier", {
-    useNewUrlParser: true
-})
+ .connect(process.env.MONGODB_URI,{ useNewUrlParser: true , useUnifiedTopology: true })
 .then(()=>{
     return Hotel.create(hotel);
 })
