@@ -5,6 +5,7 @@ const Schema = mongoose.Schema;
 
 const Museum = require("./../models/MuseumModel");
 const City = require("./../models/CitiesModel");
+require('dotenv').config();
 
 // Create schema for the city
 const museums = [
@@ -85,9 +86,7 @@ const museums = [
 
 
 mongoose
-.connect("mongodb://localhost:27017/CityEasier", {
-    useNewUrlParser: true
-})
+ .connect(process.env.MONGODB_URI,{ useNewUrlParser: true , useUnifiedTopology: true })
 .then(()=>{
     return Museum.create(museums);
 })

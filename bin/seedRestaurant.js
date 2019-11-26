@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 
 const Restaurant = require("./../models/RestaurantModel");
 const City = require("./../models/CitiesModel");
+require('dotenv').config();
 
 // Create schema for the city
 const restaurants = [
@@ -74,9 +75,7 @@ const restaurants = [
 ];
 
 mongoose
-  .connect("mongodb://localhost:27017/CityEasier", {
-    useNewUrlParser: true
-  })
+ .connect(process.env.MONGODB_URI,{ useNewUrlParser: true , useUnifiedTopology: true })
   .then(() => {
     return Restaurant.create(restaurants);
   })
