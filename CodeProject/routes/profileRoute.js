@@ -23,7 +23,6 @@ const isLoggedIn = (req, res, next) => {
     }  
   }
   
-
 //   Aqui tratar de mostrar museos, eventos y hoteles también
 // It is only showing the Restrautant nowç
   router.get("/", isLoggedIn, (req, res, next) => {
@@ -49,7 +48,6 @@ const isLoggedIn = (req, res, next) => {
           const hotels = resolvedFavourites[3];
 
           const allFavs = [...restaurants, ...museums, ...events, ...hotels]
-
 
           //  user: req.session.currentUser
           res.render("private/profile", { allFavs});
