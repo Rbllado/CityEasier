@@ -1,0 +1,27 @@
+{{!-- For Museums --}}
+<div>
+    <h2>{{museum.[0].name}}</h2>
+
+    <img src="{{museum.[0].img}}" alt="">
+
+    <h4>Type: {{museum.[0].type}} </h4>
+
+    <h4>Rating: {{museum.[0].rating}}</h4>
+
+    <h4>City: {{museum.[0].contact.address}} </h4>
+
+    <button class="favourite" data-placeid="{{museum.[0]._id}}">Button to add favourites</button>
+
+    <h4><a href="{{museum.[0].web}}">web</a></h4>
+
+    <p>Description : {{museum.[0].description}} </p>
+
+    {{#each museum.[0].comments}}
+    <div>
+        <p>Name: {{this.name}}</p>
+        <p>date: {{this.date}}</p>
+        <p>comment: {{this.comment}}</p>
+        <br>
+    </div>
+    {{/each}}
+</div>

@@ -1,0 +1,15 @@
+<div class="home-search">
+    <h2>Make your stay Easier</h2>
+    <input type="text" name="search">
+    <br>
+</div>
+
+<div class="list-cities">
+
+    {{#each allCitiesFromDB}}
+    <li>
+        <a href="city/{{this.name}}">{{this.name}}</a>
+    </li>
+    {{/each}}
+
+</div>
