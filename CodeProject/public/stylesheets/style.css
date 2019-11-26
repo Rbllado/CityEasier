@@ -1,10 +1,10 @@
 body {
   padding: 50px;
-  font: 14px "Montserrat", Helvetica, Arial, sans-serif;
+  font: 16px "Montserrat", Helvetica, Arial, sans-serif;
 }
 
 a {
-color: aliceblue;
+  color: aliceblue;
   /* color: #00b7ff; */
 }
 
@@ -29,7 +29,7 @@ button {
 
 /* logo from layout*/
 .navbar h2 {
-  font-family: 'Acme', sans-serif;
+  font-family: "Acme", sans-serif;
   font-size: 3rem;
   color: rgb(177, 177, 46);
 }
@@ -72,21 +72,21 @@ footer p {
   text-decoration: none;
 }
 
-.Barcelona{
+.Barcelona {
   background-image: url("https://tifositours.com/wp-content/uploads/2019/02/Barcelona.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   padding: 30px;
 }
 
-.Naples{
+.Naples {
   background-image: url("https://miro.medium.com/max/699/1*2mzNSMIfrd-v6Wzoz1XPhw.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   padding: 30px;
 }
 
-.Paris{
+.Paris {
   background-image: url("https://86087-590828-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2016/01/paris-fin-de-semana-1024x683.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -137,7 +137,6 @@ footer p {
   display: block;
   font-size: 3rem;
   line-height: 5rem;
-
 }
 
 .signup-form input {
@@ -159,7 +158,6 @@ footer p {
   padding: 0.5em 2em;
   border: 5px solid #175d79;
   border-radius: 2.5rem;
-
 }
 
 .signup-form p {
@@ -192,7 +190,6 @@ footer p {
   text-align: center;
   margin: 10rem auto 3rem;
 }
-
 
 /* CITY/YOU ARE IN */
 .city-wrapper h2 {
@@ -287,7 +284,6 @@ footer p {
 .single-place-wrapper h5 a {
   font-size: 2.6rem;
   text-decoration: underline;
-  
 }
 .single-place-wrapper h5 {
   margin: 1rem auto;
