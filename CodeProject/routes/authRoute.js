@@ -125,8 +125,15 @@ console.log(req.session.currentUser);
     User.findById({ _id: userId })
     .then( () => {
 
+      console.log(req.session.currentUser.username);
+
+      
       // If I type redirect is working
-      res.redirect("/private/profile");
+      res.redirect("/private/profile", );
+
+      // add favorourites
+      
+      // res.render("private/profile", {user: req.session.currentUser})
       
       // Me redirecciona a : http://localhost:3000/auth/profile
       // res.render("private/profile");

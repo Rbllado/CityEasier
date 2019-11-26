@@ -50,7 +50,9 @@ const isLoggedIn = (req, res, next) => {
 
           const allFavs = [...restaurants, ...museums, ...events, ...hotels]
 
-          res.render("private/profile", { allFavs });
+
+          //  user: req.session.currentUser
+          res.render("private/profile", { allFavs});
 
 
         })
