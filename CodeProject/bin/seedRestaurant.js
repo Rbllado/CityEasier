@@ -30,7 +30,7 @@ const restaurants = [{
     name: "RAO",
     type: "Spanish",
     rating: 8,
-    img: "./../images/rao.jpg",
+    img: "https://raobcn.com/wp-content/uploads/2019/11/rao-best-restaurant-in-barcelona.jpg",
     contact: {
       address: "Barcelona",
       phone: 677335678
@@ -84,10 +84,10 @@ const restaurants = [{
     }]
   },
   {
-    name: "Txirimiri",
-    type: "Spanish",
+    name: "baritalianfood",
+    type: "Italian",
     rating: 9,
-    img: "https://txirimiri.com/Media/txirimiri/dayvo/bar.jpg", //con url is working, with refrence to images not.
+    img: "https://i2.wp.com/www.bartyapp.com/wp-content/uploads/2018/08/matisport2.jpg?fit=1451%2C758&ssl=1", //con url is working, with refrence to images not.
     contact: {
       address: "Barcelona",
       phone: 684832284

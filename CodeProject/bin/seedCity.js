@@ -28,7 +28,7 @@ const cities = [{
     hotels: []
   },
   {
-    name: "Palma de Mallorca",
+    name: "Mallorca",
     img: String,
     restaurants: [],
     museums: [],

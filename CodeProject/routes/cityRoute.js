@@ -17,7 +17,6 @@ router.get("/barcelona", function(req, res, next) {
 
   });
 
-/* GET home page. */
 router.get("/naples", function(req, res, next) {
 
   // We connect to the databse and find the name from city that we have in the body
@@ -41,6 +40,34 @@ router.get("/paris", function(req, res, next) {
 router.get("/warsaw", function(req, res, next) {
   // We connect to the databse and find the name from city that we have in the body
   City.find({ name: "Warsaw" })
+    .then(city => {
+      res.render("city", { city });
+    })
+    .catch(err => console.log(err));
+});
+
+
+router.get("/Mallorca", function(req, res, next) {
+  // We connect to the databse and find the name from city that we have in the body
+  City.find({ name: "Mallorca" })
+    .then(city => {
+      res.render("city", { city });
+    })
+    .catch(err => console.log(err));
+});
+
+router.get("/Amsterdam", function(req, res, next) {
+  // We connect to the databse and find the name from city that we have in the body
+  City.find({ name: "Amsterdam" })
+    .then(city => {
+      res.render("city", { city });
+    })
+    .catch(err => console.log(err));
+});
+
+router.get("/Berlin", function(req, res, next) {
+  // We connect to the databse and find the name from city that we have in the body
+  City.find({ name: "Berlin" })
     .then(city => {
       res.render("city", { city });
     })

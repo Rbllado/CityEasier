@@ -28,23 +28,6 @@ router.get("/:nameCity/restaurants", function(req, res, next) {
   });
 });
 
-// router.get("/:nameCity/:category", function(req, res, next) {
-//   // Search into the city collection in the DB, the name that we have in the url.
-//   City.find({ name: req.params.nameCity }, (err, city) => {
-//     // Restaurant collection to do the populate, inside the collections city the field restaurants
-//     Restaurant.populate(
-//       city,
-//       { path: req.params.category },
-//       (err, restaurantsByCity) => {
-//         // res.status(200).send(city);
-//         // console.log(detallRest);
-//         const arrayRestaurantInCity = restaurantsByCity[0].restaurants;
-
-//         res.render("placeType", { arrayRestaurantInCity });
-//       }
-//     );
-//   });
-// });
 
 router.get("/:nameCity/museums", function(req, res, next) {
   City.find({ name: req.params.nameCity }, (err, city) => {
