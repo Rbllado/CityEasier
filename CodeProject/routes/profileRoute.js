@@ -25,7 +25,7 @@ const isLoggedIn = (req, res, next) => {
   
 
 //   Aqui tratar de mostrar museos, eventos y hoteles también
-// It is only showing the Restrautant now
+// It is only showing the Restrautant nowç
   router.get("/", isLoggedIn, (req, res, next) => {
     const userId = req.session.currentUser._id;
 
