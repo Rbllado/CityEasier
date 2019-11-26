@@ -33,11 +33,10 @@ if (buttonDeleteFav){
         for(let i = 0;i<buttonDeleteFav.length;i++){        
             buttonDeleteFav[i].addEventListener('click', (e) => {
                 const deleteId = (e.target.dataset.placeid);
-                // console.log(deleteID);
                 
                 axios.get(`http://localhost:3000/favouriteDelete?id=${deleteId}`)
                 .then( (response) => {
-                    buttonDeleteFav.style.background = 'blue';
+                    buttonDeleteFav[i].style.background = 'blue';
                     // console.log('response ',response);
                     
                 })
