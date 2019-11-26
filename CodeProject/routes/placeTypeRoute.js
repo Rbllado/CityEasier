@@ -64,6 +64,8 @@ router.get("/:nameCity/events", function(req, res, next) {
     Event.populate(city, { path: "events" }, (err, eventsByCity) => {
       
       const arrayEventInCity = eventsByCity[0].events;
+      console.log(arrayEventInCity);
+      
 
       res.render("placeType", { arrayEventInCity });
     });

@@ -12,7 +12,7 @@ const event = [
     name: "Fiesta de Gracia",
     type: "Party",
     rating: 8,
-    contact: 
+    contact:  
       {
         address: "Barcelona",
         phone: 666994499
