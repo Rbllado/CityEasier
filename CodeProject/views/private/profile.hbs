@@ -2,26 +2,24 @@
 
 <div class="profile">
     <img src="" alt="">
-    <h2>Welcome : {{username}} </h2>
+    <h2>Welcome :<br> {{username}} </h2>
+    <button class="edit-profile"> Edit your profile </button>
     <p>Your favorites: </p>
 </div>
 
-<button class="edit-profile"> Edit Profile </button>
 
 
 
 {{!-- Restaurantes --}}
 {{#each allFavs }}
-<div>
-    <img src="{{this.img}}" alt="">
-    <div class="place-description">
-        <h2>Name: {{this.name}}</h2>
+<div class="place-type-one">
+    <img src="{{this.img}}" alt="Photo of restaurant">
+    <div class="profile-favs place-description">
+        <h2><a href="/singleplace/Barcelona/{{this.name}}">Name: {{this.name}}</a></h2>
         <p>Rating: {{this.rating}}</p>
-        <p>Type: {{this.address}}</p>
-        {{!-- like button of favorites --}}
+        <p>Type: {{this.type}}</p>
+        <p>City: {{this.contact.address}}</p>
+        <button class="remove-favorite" data-placeid="{{this._id}}"> Remove favourite </button>
     </div>
-    <button class="remove-favorite" data-placeid="{{this._id}}"> Remove favourite </button>
 </div>
 {{/each}}
-
-
