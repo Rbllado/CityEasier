@@ -20,7 +20,8 @@ if (buttonFav) {
 
         const restaurantId = (e.target.dataset.placeid);
 
-        axios.get(`http://localhost:3000/favourite?id=${restaurantId}`)
+        // axios.get(`http://localhost:3000/favourite?id=${restaurantId}`)
+        axios.get(window.location.href+`/../../../favourite?id=${restaurantId}`)
             .then((response) => {
                 buttonFav.style.background = 'red'
                 console.log('response ', response);
@@ -39,7 +40,7 @@ if (buttonDeleteFav) {
         buttonDeleteFav[i].addEventListener('click', (e) => {
             const deleteId = (e.target.dataset.placeid);
 
-            axios.get(`http://localhost:3000/favouriteDelete?id=${deleteId}`)
+            axios.get(window.location.href+`/../../../favouriteDelete?id=${deleteId}`)
                 .then((response) => {
                     buttonDeleteFav[i].style.background = 'blue';
                     location.reload();
@@ -54,6 +55,7 @@ if (buttonDeleteFav) {
 // Modify profile edit, redirect when press the button edit.
 if (buttonEditProfile) {
     buttonEditProfile.addEventListener("click", (e) => {
-        window.location.replace("http://localhost:3000/private/edit");
+        // window.location.replace("http://localhost:3000/private/edit");
+        window.location.replace(window.location.href+"/../../private/edit");
     })
 }
