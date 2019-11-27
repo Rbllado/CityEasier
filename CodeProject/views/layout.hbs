@@ -21,10 +21,15 @@
       <div class="menu">
         <ul>
           <li> <a href="/"> Home</a></li>
-          <li><a href="auth/signup">Sign up</a></li>
-          <li><a href="auth/login">Log in</a> </li>
-          <li><a href="auth/profile">Profile</a></li>
-          <li><a href="auth/logout">Log out</a></li>
+          {{#unless currentUser}}
+          <li><a href="/auth/signup">Sign up</a></li>
+          <li><a href="/auth/login">Log in</a> </li>
+          {{/unless}}
+          {{#if currentUser}}
+          <li><a href="/auth/profile">Profile</a></li>
+          <li><a href="/auth/logout">Log out</a></li>
+          {{/if}}
+
         </ul>
       </div>
     </div>

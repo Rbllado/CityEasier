@@ -65,10 +65,11 @@ button {
   border-radius: 5px;
   background-color: #fff;
 }
-.menu {
+/* .menu {
   display: flex;
   position: absolute;
-  top: 5em; /*site-nav height*/
+  top: 5em; 
+  
   right: 0;
   height: 100%;
   width: 70vw;
@@ -83,7 +84,7 @@ button {
 }
 .menu li {
   
-}
+} */
 
 /*footer layout*/
 footer p {

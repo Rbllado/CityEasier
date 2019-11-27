@@ -27,6 +27,7 @@ const isLoggedIn = (req, res, next) => {
 // It is only showing the Restrautant nowç
   router.get("/", isLoggedIn, (req, res, next) => {
     const userId = req.session.currentUser._id;
+    const username = req.session.currentUser.username;
 
     User.findById(userId, (err, user) =>{
 
@@ -50,7 +51,7 @@ const isLoggedIn = (req, res, next) => {
           const allFavs = [...restaurants, ...museums, ...events, ...hotels]
 
           //  user: req.session.currentUser
-          res.render("private/profile", { allFavs});
+          res.render("private/profile", { allFavs, username});
 
 
         })
