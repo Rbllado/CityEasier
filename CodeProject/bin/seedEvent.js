@@ -12,6 +12,7 @@ const event = [
     name: "Fiesta de Gracia",
     type: "Party",
     rating: 8,
+    img: "https://www.dodmagazine.es/wp-content/uploads/2018/11/fiestas-gracia-barcelona.jpg",
     contact:  
       {
         address: "Barcelona",
@@ -37,6 +38,7 @@ const event = [
     name: "Sonar Music festival",
     type: "Festival",
     rating: 9,
+    img: "https://www.billboard.com/files/styles/article_main_image/public/media/sonar-music-fest-billboard-1548.jpg",
     contact: 
       {
         address: "Barcelona",
@@ -59,26 +61,28 @@ const event = [
     ]
   },
 
-//   {
-//     name: "String",
-//     type: String,
-//     rating: Number,
-//     contact: [
-//       {
-//         address: String,
-//         phone: Number
-//       }
-//     ],
-//     web: String,
-//     description: String,
-//     comments: [
-//       {
-//         name: String,
-//         date: Date,
-//         comment: String
-//       }
-// ]
-//   }
+  {
+    name: "Gira fuego Estopa",
+    type: "music",
+    rating: 9,
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Estopa_2008.06.13_007.jpg/250px-Estopa_2008.06.13_007.jpg",
+    contact: 
+      {
+        address: "Barcelona",
+        phone: 6733455563
+      }
+    ,
+    web: "https://www.estopa.com/",
+    description: `Llega FUEGO TOUR, la nueva gira de Estopa, donde los hermanos Muñoz celebrarán sus 20 años de carrera musical presentando las canciones de su nuevo disco y recordando sus grande éxitos, que han hecho que Estopa, 
+    sea uno de los referentes de la música nacional con más de 5.000.000 de discos vendidos en todo el mundo`,
+    comments: [
+      {
+        name: "johny",
+        date: "2019-12-14",
+        comment: "Best conecrt in the world"
+      }
+]
+  }
 ];
 
 

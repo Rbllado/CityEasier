@@ -12,6 +12,7 @@ const museums = [
     name: "Museo Nacional de Arte de Cataluña",
     type: "Art",
     rating: 9,
+    img: "https://cronicaglobal.elespanol.com/uploads/s1/29/30/68/7/museu-nacional-dart-catalunya.jpeg",
     contact: 
       {
         address: "Barcelona",
@@ -38,6 +39,7 @@ const museums = [
     name: "Picasso museum",
     type: "Art",
     rating: 4,
+    img: "http://www.bcn.cat/museupicasso/imatges/elmuseu/presentacio/sales1-museu-picasso-barcelona.jpg",
     contact: 
       {
         address: "Barcelona",
@@ -59,26 +61,28 @@ const museums = [
     ]
   },
 
-//   {
-//     name: "String",
-//     type: String,
-//     rating: Number,
-//     contact: [
-//       {
-//         address: String,
-//         phone: Number
-//       }
-//     ],
-//     web: String,
-//     description: String,
-//     comments: [
-//       {
-//         name: String,
-//         date: Date,
-//         comment: String
-//       }
-// ]
-//   }
+  {
+    name: "Museum King Jan III in Wilanow",
+    type: "String",
+    rating: 9,
+    img: "https://www.101viajes.com/sites/default/files/palacio-wilanow.jpg",
+    contact:
+      {
+        address: "Warsaw",
+        phone: 688483828
+      }
+    ,
+    web: "https://warsawtour.pl/es/project/museo-palacio-de-wilanow/",
+    description: `The Museum of King John III's Palace at Wilanów[1] (Polish: Muzeum Pałacu Króla Jana III w Wilanowie) is a museum in Warsaw,
+     Poland considered to be one of the oldest in the country and the repository of the country's royal and artistic heritage`,
+    comments: [
+      {
+        name: "Erik",
+        date: "2018-4-23",
+        comment: "Very nice Museum"
+      }
+]
+  }
 ];
 
 
