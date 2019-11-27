@@ -53,30 +53,25 @@ h2.logo {
   align-items: center;
   padding: 10px;
   box-sizing: border-box;
-  height: 20px;
+  height: 2rem;
   width: 100%;
   background: #cc504e;
 }
 
 .side-menu-trigger {
+  font-size: 1.2rem;
+  font-weight: bold;
+  height: 2rem;
   border: 0;
   border-radius: 5px;
-  background: #ffffff;
+  background: #ecd861;
+  padding: 1px 10px;
 }
-<<<<<<< HEAD
 
 .side-menu {
   display: flex;
   box-sizing: border-box;
   position: fixed;
-=======
-/* .menu {
-  display: flex;
-  position: absolute;
-  top: 5em; 
-  
-  right: 0;
->>>>>>> develop
   height: 100%;
   width: 300px;
   top: 20px;
@@ -108,7 +103,6 @@ h2.logo {
   border-radius: 5px;
   overflow: hidden;
 }
-<<<<<<< HEAD
 
 .side-menu ul li a {
   display: flex;
@@ -120,11 +114,6 @@ h2.logo {
   text-decoration: none;
   box-sizing: border-box;
 }
-=======
-.menu li {
-  
-} */
->>>>>>> develop
 
 .open {
   transform: translateX(0px);
@@ -136,10 +125,10 @@ h2.logo {
 
 /*footer layout*/
 footer p {
-  font-size: 1.6rem;
+  font-size: 0.8rem;
   text-align: center;
   line-height: 2.4rem;
-  margin: 5rem auto 2rem;
+  margin: 1.2rem auto;
 }
 
 /* INDEX/HOME */
@@ -172,35 +161,11 @@ footer p {
   background-position: center;
   padding: 10px 20px;
 }
-
-.list-cities li {
-  /* 4 rem */
-  font-size: 2.5rem;
-  color: aliceblue;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  list-style: none;
-  /* 2rem */
-  padding: 1rem 1rem;
-  border-bottom: 5px solid #94d2ff;
-}
-
-.list-cities li a {
-  margin: 0 auto;
-  padding: 1rem;
-  color: aliceblue;
-}
-
-.list-cities li a:hover {
-  color: orange;
-  text-decoration: none;
-}
-
 .Mallorca {
   background-image: url("https://www.barcelo.com/pinandtravel/wp-content/uploads/2017/04/pin-and-travel-souvenirs-mallorca@2x-1170x781.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   padding: 30px;
 }
 
@@ -208,6 +173,7 @@ footer p {
   background-image: url("https://www.telegraph.co.uk/content/dam/Travel/2017/July/warsaw-GettyImages-53893674.jpg?imwidth=1400");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   padding: 30px;
 }
 
@@ -215,6 +181,7 @@ footer p {
   background-image: url("https://a.cdn-hotels.com/gdcs/production43/d534/1bd81a82-de7a-4cf5-a625-ca3cd27a3346.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   padding: 30px;
 }
 
@@ -222,22 +189,44 @@ footer p {
   background-image: url("https://cdn2.traveler.es/uploads/images/thumbs/201522/este_versus_oeste_icon_que_berlin_te_quedas_2585_1000x599.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   padding: 30px;
 }
 
+.list-cities li {
+  /* 4 rem */
+  font-size: 2rem;
+  color: aliceblue;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  list-style: none;
+  /* 2rem */
+  padding: 1rem;
+  border-bottom: 5px solid #94d2ff;
+}
 
-.home-search {
+.list-cities li a {
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  color: aliceblue;
+  text-align: center;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+}
+
+.list-cities li a:hover {
+  color: orange;
+  text-decoration: none;
+}
+
+.home-search h3 {
   font-size: 2.6rem;
   text-align: center;
   padding: 1rem;
-}
-
-.home-search h2 {
   margin: 2rem auto;
-}
-
-.home-search input {
-  background-color: rgb(204, 224, 243);
+  color: #ffff7b;
 }
 
 /* SIGNUP VIEW */
