@@ -8,6 +8,7 @@ const museumModel = new Schema({
     name: String,
     type: String,
     rating: Number,
+    img: String, //ESto es nuevo
     contact: {
       address: String,
       phone: Number

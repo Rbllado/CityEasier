@@ -12,6 +12,7 @@ const singlePlace = require("./singlePlaceRoute");
 const privateEdit = require("./editProfileRoute");
 const privateProfile = require("./profileRoute")
 const favourite = require("./favouriteRoute");
+const favouriteDelete = require("./favouriteDeleteRoute");
 // const signUp = require("./authRoute");
 
 
@@ -28,6 +29,8 @@ router.use("/private/edit", privateEdit);
 router.use("/private/profile", privateProfile);
 
 router.use("/favourite", favourite);
+
+router.use("/favouriteDelete", favouriteDelete);
 
 
 // router.use("/auth", signUp);
