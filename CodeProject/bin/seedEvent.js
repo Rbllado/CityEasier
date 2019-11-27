@@ -73,8 +73,10 @@ const event = [
       }
     ,
     web: "https://www.estopa.com/",
-    description: `Llega FUEGO TOUR, la nueva gira de Estopa, donde los hermanos Muñoz celebrarán sus 20 años de carrera musical presentando las canciones de su nuevo disco y recordando sus grande éxitos, que han hecho que Estopa, 
-    sea uno de los referentes de la música nacional con más de 5.000.000 de discos vendidos en todo el mundo`,
+    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean laoreet ante id consectetur feugiat.
+     Phasellus magna orci, vestibulum sagittis ante vel, mattis iaculis enim. Aliquam aliquam ornare tristique. Fusce porta euismod sapien,
+      vitae tincidunt felis sodales a. Aliquam et consequat tortor, vel tincidunt turpis. Nullam vel tristique leo, non tempor velit. Nam at blandit purus. Sed tempus, mauris eu finibus ornare, purus odio sollicitudin orci, interdum congue turpis neque vitae nulla. Vestibulum vitae finibus massa. Sed lobortis nisl vel bibendum consectetur. Cras at quam ut arcu semper tempus. Pellentesque dolor urna, porta a mi non, tempus viverra leo. Maecenas ac nibh a erat sollicitudin rhoncus. Phasellus magna metus, fermentum et metus id, pellentesque cursus mi.
+     Morbi metus risus, ullamcorper ac molestie ut, consectetur et nibh.`,
     comments: [
       {
         name: "johny",
