@@ -48,20 +48,13 @@ app.use(
 );
 
 // check logged In:
-// function checkIfLoggedIn(req, res, next) {
-//   var sessionId = req.session.currentUser;
-//   console.log("SessionId :  ", sessionId);
-  
-//   if (!sessionId || sessionId.search(/^[A-Fa-f0-9]+$/) == -1) {
-//     res.locals.loggedIn = false;
-//     // res.locals.loggedIn = false;
-//     next();
-//     return;
-//   }
-// }
+app.use((req, res, next) => {
+  app.locals.currentUser = req.session.currentUser;
+  console.log(app.locals.currentUser);
+  next();
+});
 
 // app.use(checkIfLoggedIn);
-
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
