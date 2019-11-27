@@ -8,8 +8,8 @@
 <div class="list-cities">
 
     {{#each allCitiesFromDB}}
-    <li>
-        <a href="city/{{this.name}}" class="{{this.name}}">{{this.name}}</a>
+    <li class="{{this.name}}">
+        <a href="city/{{this.name}}">{{this.name}}</a>
     </li>
     {{/each}}
 
