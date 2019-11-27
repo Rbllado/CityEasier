@@ -50,13 +50,11 @@ app.use(
 // check logged In:
 app.use((req, res, next) => {
   app.locals.currentUser = req.session.currentUser;
-console.log(app.locals.currentUser);
-
+  console.log(app.locals.currentUser);
   next();
-})
+});
 
 // app.use(checkIfLoggedIn);
-
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
