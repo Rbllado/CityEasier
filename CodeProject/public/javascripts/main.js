@@ -1,15 +1,12 @@
-// 
-
-console.log("test");
 
 const buttonFav = document.querySelector(".favourite");
 const buttonEditProfile = document.querySelector(".edit-profile");
-// const buttonDeleteFav = document.querySelectorAll(".remove-favorite");
 
 var buttonDeleteFav = document.getElementsByClassName('remove-favorite');
 
 
-// Add favourite
+// Add favourite element into profile page.
+
 if (buttonFav) {
     buttonFav.addEventListener("click", (e) => {
 
@@ -26,9 +23,9 @@ if (buttonFav) {
 }
 
 
-if (buttonDeleteFav){
+// Button to delete the favourite elemenst in the profile page.
 
-    // buttonDeleteFav.addEventListener("click", (e) => {
+if (buttonDeleteFav){
         
         for(let i = 0;i<buttonDeleteFav.length;i++){        
             buttonDeleteFav[i].addEventListener('click', (e) => {
@@ -37,7 +34,7 @@ if (buttonDeleteFav){
                 axios.get(`http://localhost:3000/favouriteDelete?id=${deleteId}`)
                 .then( (response) => {
                     buttonDeleteFav[i].style.background = 'blue';
-                    // console.log('response ',response);
+                    location.reload();
                     
                 })
                 .catch( (err) => console.log(err));
@@ -46,9 +43,7 @@ if (buttonDeleteFav){
         
     };
 
-// )}
-
-// Modify profile edit
+// Modify profile edit, redirect when press the button edit.
 if(buttonEditProfile){
     buttonEditProfile.addEventListener("click", (e) => {
         window.location.replace("http://localhost:3000/private/edit");
