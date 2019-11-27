@@ -1,25 +1,25 @@
 // Login, Sign up, Logout
 
-
-var express = require('express');
+var express = require("express");
 var router = express.Router();
 const User = require("./../models/UserModel");
 
 
+
 // 0 - Require bcrypt
-const bcrypt = require('bcrypt');
+const bcrypt = require("bcrypt");
 // 1 - Specify how many salt rounds
 const saltRounds = 10;
 
 // POST '/auth/signup'
-router.post('/signup', (req, res, next) => {
+router.post("/signup", (req, res, next) => {
   // 2 - Destructure the password and username
   const { username, password } = req.body;
 
   // 3 - Check if the username and password are empty strings
-  if (username === '' || password === '') {
-    res.render('auth/signup', {
-      errorMessage: 'Provide username and password.',
+  if (username === "" || password === "") {
+    res.render("auth/signup", {
+      errorMessage: "Provide username and password."
     });
     return;
   }
@@ -37,8 +37,8 @@ router.post('/signup', (req, res, next) => {
     .then(user => {
       // > If username exists already send the error
       if (user) {
-        res.render('auth/signup', {
-          errorMessage: 'Username already exists.',
+        res.render("auth/signup", {
+          errorMessage: "Username already exists."
         });
         return;
       }
@@ -50,11 +50,11 @@ router.post('/signup', (req, res, next) => {
       // > Create the user in the DB
       User.create({ username, password: hashedPassword })
         .then(newUserObj => {
-          res.redirect('/');
+          res.redirect("/");
         })
         .catch(err => {
-          res.render('auth/signup', {
-            errorMessage: 'Error while creating new username.',
+          res.render("auth/signup", {
+            errorMessage: "Error while creating new username."
           });
         });
 
@@ -63,16 +63,15 @@ router.post('/signup', (req, res, next) => {
     .catch(err => console.log(err));
 });
 
-
 // POST 'auth/login'
-router.post('/login', (req, res, next) => {
+router.post("/login", (req, res, next) => {
   // Deconstruct the password and the user
   const { username, password: enteredPassword } = req.body;
 
   // Check if username or password are empty strings
-  if (username === '' || enteredPassword === '') {
-    res.render('auth/login', {
-      errorMessage: 'Provide username and password',
+  if (username === "" || enteredPassword === "") {
+    res.render("auth/login", {
+      errorMessage: "Provide username and password"
     });
     return;
   }
@@ -82,7 +81,7 @@ router.post('/login', (req, res, next) => {
     .then(userData => {
       // If - username doesn't exist - return error
       if (!userData) {
-        res.render('auth/login', { errorMessage: 'Username not found!' });
+        res.render("auth/login", { errorMessage: "Username not found!" });
         return;
       }
 
@@ -91,7 +90,7 @@ router.post('/login', (req, res, next) => {
 
       const passwordCorrect = bcrypt.compareSync(
         enteredPassword,
-        hashedPasswordFromDB,
+        hashedPasswordFromDB
       );
 
       // If password is correct - create session (& cookie) and redirect
@@ -100,7 +99,7 @@ router.post('/login', (req, res, next) => {
         // Save the login in the session ( and create cookie )
         // And redirect the user
         req.session.currentUser = userData;
-        res.redirect('/');
+        res.redirect("/");
       }
 
       // Else - if password incorrect - return error
@@ -108,23 +107,63 @@ router.post('/login', (req, res, next) => {
     .catch(err => console.log(err));
 });
 
+// Mirar porque no funciona --> profile is like not working with the boolean and _id not working now
+router.get("/profile", (req, res, next) => {
+
+  // console.log("que coño es: ",req.session.currentUser._id);
+console.log(req.session.currentUser);
+
+  
+  if(typeof req.session.currentUser === "undefined"){
+    
+    res.render("auth/login");
+    
+  } 
+  else{
+    const userId = req.session.currentUser._id;
+    
+    User.findById({ _id: userId })
+    .then( () => {
+
+      console.log(req.session.currentUser.username);
+
+      
+      // If I type redirect is working
+      res.redirect("/private/profile", );
+
+      // add favorourites
+      
+      // res.render("private/profile", {user: req.session.currentUser})
+      
+      // Me redirecciona a : http://localhost:3000/auth/profile
+      // res.render("private/profile");
+      
+    })
+    .catch( (err) => {
+      res.status(400).send(err)
+    });
+    
+  }
+});
+
+// Mirar porque no funciona --> it is not destroying the session
+router.get("/logout", (req, res, next) => {
+  req.session.destroy(err => {
+    if (err) {
+      return console.log(err);
+    }
+    res.redirect("/");
+  });
+});
 
 /* GET home page. */
-router.get('/login', function (req, res, next) {
+router.get("/login", function(req, res, next) {
   res.render("auth/login");
 });
 
 /* GET home page. */
-router.get('/signup', function (req, res, next) {
+router.get("/signup", function(req, res, next) {
   res.render("auth/signup");
 });
 
-
-// router.get(( "/", () =>{
-//     res.session.destroy()
-// }
-
-
-
-
-module.exports = router; 
+module.exports = router;

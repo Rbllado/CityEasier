@@ -1,7 +1,7 @@
 {{!-- In this page that is in a city and show the category --> nombre barcelona y datos categoria --}}
 
 <div class="place-type-wrapper">
-    <h3>Tipo array: {{arrayRestaurantInCity.[0].contact.address}}</h3>
+    <h3>You are in: {{arrayRestaurantInCity.[0].contact.address}}</h3>
     <br>
 
 
@@ -10,9 +10,9 @@
 
     <h2><a href="/singleplace/Museum/{{this.name}}">Name: {{this.name}}</a></h2>
     <img src="{{this.img}}" alt="Photo of restaurant">
-    <h4>Rating : {{this.rating}}</h4>
-    <h4>Type: {{this.type}}</h4>
-    <h4>City: {{this.contact.address}}</h4>
+    <p>Rating: {{this.rating}}</p>
+    <p>Type: {{this.type}}</p>
+    <p>City: {{this.contact.address}}</p>
     <br>
 
     {{/each}}
@@ -22,9 +22,9 @@
     <div class="place-type-one">
         <img src="{{this.img}}" alt="Photo of restaurant">
         <div class="place-description">
-            <h4><a href="/singleplace/Barcelona/{{this.name}}">Name: {{this.name}}</a></h4>
-            <p>Rating : {{this.rating}}</p>
-            <p>Type cuisine : {{this.type}}</p>
+            <h2><a href="/singleplace/Barcelona/{{this.name}}">Name: {{this.name}}</a></h2>
+            <p>Rating: {{this.rating}}</p>
+            <p>Type: {{this.type}}</p>
             <p>City: {{this.contact.address}}</p>
             <br>
         </div>
@@ -35,9 +35,9 @@
 
     <h2><a href="/singleplace/Event/{{this.name}}">Name: {{this.name}}</a></h2>
     <img src="{{this.img}}" alt="Photo of restaurant">
-    <h4>Rating : {{this.rating}}</h4>
-    <h4>Type: {{this.type}}</h4>
-    <h4>City: {{this.contact.address}}</h4>
+    <p>Rating : {{this.rating}}</p>
+    <p>Type: {{this.type}}</p>
+    <p>City: {{this.contact.address}}</p>
     <br>
 
     {{/each}}
@@ -47,9 +47,9 @@
 
     <h2><a href="/singleplace/Hotel/{{this.name}}">Name: {{this.name}}</a></h2>
     <img src="{{this.img}}" alt="Photo of restaurant">
-    <h4>Rating : {{this.rating}}</h4>
-    <h4>Type : {{this.type}}</h4>
-    <h4>City: {{this.contact.address}}</h4>
+    <p>Rating : {{this.rating}}</p>
+    <p>Type : {{this.type}}</p>
+    <p>City: {{this.contact.address}}</p>
     <br>
 
     {{/each}}

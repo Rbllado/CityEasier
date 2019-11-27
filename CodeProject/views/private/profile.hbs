@@ -2,29 +2,26 @@
 
 <div class="profile">
     <img src="" alt="">
-    <h2>Welcome</h2>
-    <h3>{{this.username}}</h3>
-    <p>Your favorites:</p>
+    <h2>Welcome : {{username}} </h2>
+    <p>Your favorites: </p>
 </div>
+
+<button class="edit-profile"> Edit Profile </button>
+
 
 
 {{!-- Restaurantes --}}
-{{#each arrayrestaurantsCity }}
+{{#each allFavs }}
 <div>
     <img src="{{this.img}}" alt="">
-    <p>{{this.name}}</p>
-    <p>{{this.rating}}</p>
-    <p>{{this.address}}</p>
-    {{!-- like button of favorites --}}
+    <div class="place-description">
+        <h2>Name: {{this.name}}</h2>
+        <p>Rating: {{this.rating}}</p>
+        <p>Type: {{this.address}}</p>
+        {{!-- like button of favorites --}}
+    </div>
+    <button class="remove-favorite" data-placeid="{{this._id}}"> Remove favourite </button>
 </div>
 {{/each}}
 
-{{#each arraymuseumsCity }}
-<div>
-    <img src="{{this.img}}" alt="">
-    <p>{{this.name}}</p>
-    <p>{{this.rating}}</p>
-    <p>{{this.address}}</p>
-    {{!-- like button of favorites --}}
-</div>
-{{/each}}
+

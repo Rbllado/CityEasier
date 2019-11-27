@@ -13,7 +13,8 @@ const event = [
     name: "Fiesta de Gracia",
     type: "Party",
     rating: 8,
-    contact: 
+    img: "https://www.dodmagazine.es/wp-content/uploads/2018/11/fiestas-gracia-barcelona.jpg",
+    contact:  
       {
         address: "Barcelona",
         phone: 666994499
@@ -38,6 +39,7 @@ const event = [
     name: "Sonar Music festival",
     type: "Festival",
     rating: 9,
+    img: "https://www.billboard.com/files/styles/article_main_image/public/media/sonar-music-fest-billboard-1548.jpg",
     contact: 
       {
         address: "Barcelona",
@@ -60,26 +62,30 @@ const event = [
     ]
   },
 
-//   {
-//     name: "String",
-//     type: String,
-//     rating: Number,
-//     contact: [
-//       {
-//         address: String,
-//         phone: Number
-//       }
-//     ],
-//     web: String,
-//     description: String,
-//     comments: [
-//       {
-//         name: String,
-//         date: Date,
-//         comment: String
-//       }
-// ]
-//   }
+  {
+    name: "Gira fuego Estopa",
+    type: "music",
+    rating: 9,
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Estopa_2008.06.13_007.jpg/250px-Estopa_2008.06.13_007.jpg",
+    contact: 
+      {
+        address: "Barcelona",
+        phone: 6733455563
+      }
+    ,
+    web: "https://www.estopa.com/",
+    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean laoreet ante id consectetur feugiat.
+     Phasellus magna orci, vestibulum sagittis ante vel, mattis iaculis enim. Aliquam aliquam ornare tristique. Fusce porta euismod sapien,
+      vitae tincidunt felis sodales a. Aliquam et consequat tortor, vel tincidunt turpis. Nullam vel tristique leo, non tempor velit. Nam at blandit purus. Sed tempus, mauris eu finibus ornare, purus odio sollicitudin orci, interdum congue turpis neque vitae nulla. Vestibulum vitae finibus massa. Sed lobortis nisl vel bibendum consectetur. Cras at quam ut arcu semper tempus. Pellentesque dolor urna, porta a mi non, tempus viverra leo. Maecenas ac nibh a erat sollicitudin rhoncus. Phasellus magna metus, fermentum et metus id, pellentesque cursus mi.
+     Morbi metus risus, ullamcorper ac molestie ut, consectetur et nibh.`,
+    comments: [
+      {
+        name: "johny",
+        date: "2019-12-14",
+        comment: "Best conecrt in the world"
+      }
+]
+  }
 ];
 
 

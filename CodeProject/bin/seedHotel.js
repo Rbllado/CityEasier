@@ -15,6 +15,7 @@ const hotel = [
     name: "CATALONIA BORN",
     type: "Hotel",
     rating: 6,
+    img: "https://www.pinterest.es/pin/287456388698648894/",
     contact: 
       {
         address: "Barcelona",
@@ -37,51 +38,50 @@ const hotel = [
   },
 
   {
-    name: "Hotel Ostias",
+    name: "Hotel Bagués",
     type: "Hotel",
     rating: 4,
+    img: "https://q-cf.bstatic.com/images/hotel/max1024x768/151/151781366.jpg",
     contact: 
       {
         address: "Barcelona",
         phone: 677332233
       }
     ,
-    web: "https://www.hoteloasis.es/es/index.html",
+    web: "https://www.hotelbagues.com/#!es/el-hotel/",
     description: `What makes a desert beautiful is that somewhere it hides a well.`,
     comments: [
       {
         name: "clara",
         date: "2017-6-10",
-        comment: "Normal"
+        comment: "Very nice"
       }
     ]
   },
 
-//   {
-//     name: "String",
-//     type: String,
-//     rating: Number,
-//     contact: [
-//       {
-//         addres: String,
-//         phone: Number
-//       }
-//     ],
-//     web: String,
-//     description: String,
-//     comments: [
-//       {
-//         name: String,
-//         date: Date,
-//         comment: String
-//       }
-// ]
-//   }
+  {
+    name: "Portofino",
+    type: "Hotel",
+    rating: "9.5",
+    img: "https://q-cf.bstatic.com/images/hotel/max1024x768/214/214424507.jpg",
+    contact: 
+      {
+        address: "Mallorca",
+        phone: 688394939
+      }
+    ,
+    web: "https://www.hotelurportofino.com/",
+    description: `El UR Portofino se encuentra a solo 2 km del aeropuerto de Palma de Mallorca
+     y a 100 metros de la playa. Ofrece una piscina grande al aire libre, bar y conexión WiFi gratuita.`,
+    comments: [
+      {
+        name: "Michal",
+        date: "2016-8-21",
+        comment: "Very nice holydays in Mallorca"
+      }
+]
+  }
 ];
-
-
-
-
 
 mongoose
  .connect(process.env.MONGODB_URI,{ useNewUrlParser: true , useUnifiedTopology: true })

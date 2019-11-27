@@ -1,13 +1,14 @@
 <div class="home-search">
-    <h2>Make your stay Easier</h2>
-    <input type="text" name="search">
-    <br>
+    <h3>Make your stay Easier</h3>
+    {{!-- <input type="text" name="search"> --}}
+    {{!-- <div><h3>Put an image I think</h3></div> --}}
+    <hr>
 </div>
 
 <div class="list-cities">
 
     {{#each allCitiesFromDB}}
-    <li>
+    <li class="{{this.name}}">
         <a href="city/{{this.name}}">{{this.name}}</a>
     </li>
     {{/each}}
