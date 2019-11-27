@@ -145,6 +145,35 @@ footer p {
   padding: 30px;
 }
 
+.Mallorca {
+  background-image: url("https://www.barcelo.com/pinandtravel/wp-content/uploads/2017/04/pin-and-travel-souvenirs-mallorca@2x-1170x781.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 30px;
+}
+
+.Warsaw {
+  background-image: url("https://www.telegraph.co.uk/content/dam/Travel/2017/July/warsaw-GettyImages-53893674.jpg?imwidth=1400");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 30px;
+}
+
+.Amsterdam {
+  background-image: url("https://a.cdn-hotels.com/gdcs/production43/d534/1bd81a82-de7a-4cf5-a625-ca3cd27a3346.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 30px;
+}
+
+.Berlin {
+  background-image: url("https://cdn2.traveler.es/uploads/images/thumbs/201522/este_versus_oeste_icon_que_berlin_te_quedas_2585_1000x599.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 30px;
+}
+
+
 .home-search {
   font-size: 2.6rem;
   text-align: center;
