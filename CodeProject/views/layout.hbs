@@ -5,22 +5,29 @@
   <title>{{title}}</title>
   <link href="https://fonts.googleapis.com/css?family=Acme&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
-  <meta name="viewport" content="width-device-width", initial-scale="1", shrink-to-fit="no">
+  <meta name="viewport" content="width-device-width" , initial-scale="1" , shrink-to-fit="no">
   <link rel='stylesheet' href='/stylesheets/style.css' />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  {{!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> --}}
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+  {{!-- nav class from bootstrap navbar-expand-lg navbar-light bg-light --}}
+  <nav class="site-nav">
     <h2>CityEasier</h2>
-    <ul>
-      <li> <a href="/"> Home</a></li>
-      <li><a href="auth/signup">Sign up</a></li>
-      <li><a href="auth/login">Log in</a> </li>
-      <li><a href="auth/profile">Profile</a></li>
-      <li><a href="auth/logout">Log out</a></li>
-    </ul>
+    <div class="nav">
+      <button class="nav-trigger">Menu</button>
+      <div class="menu">
+        <ul>
+          <li> <a href="/"> Home</a></li>
+          <li><a href="auth/signup">Sign up</a></li>
+          <li><a href="auth/login">Log in</a> </li>
+          <li><a href="auth/profile">Profile</a></li>
+          <li><a href="auth/logout">Log out</a></li>
+        </ul>
+      </div>
+    </div>
   </nav>
 
 

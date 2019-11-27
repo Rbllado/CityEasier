@@ -1,6 +1,19 @@
+* {
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+/* logo: #B3B33D
+body: #94D2FF
+yellow: #FFFF7B
+brick light: #CC504E
+brick dark: #B34F4D */
+
 body {
-  padding: 50px;
+  /* padding: 50px; */
   font: 16px "Montserrat", Helvetica, Arial, sans-serif;
+  background-color: #94d2ff;
 }
 
 a {
@@ -13,9 +26,9 @@ body {
   height: 100%;
 }
 
-#wrap {
+/* #wrap {
   min-height: 100%;
-}
+} */
 
 /* #main {
   overflow: auto;
@@ -28,10 +41,48 @@ button {
 }
 
 /* logo from layout*/
-.navbar h2 {
+
+.site-nav {
+  text-align: center;
+  height: 5em;
+  width: 100%;
+  background-color: #cc504e;
+}
+.site-nav h2 {
   font-family: "Acme", sans-serif;
-  font-size: 3rem;
-  color: rgb(177, 177, 46);
+  font-size: 3em;
+  color: #b3b33d;
+  margin: 0.5rem auto;
+}
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  align-content: flex-end;
+  padding: 10px;
+}
+.nav-trigger {
+  border: 0;
+  border-radius: 5px;
+  background-color: #fff;
+}
+.menu {
+  display: flex;
+  position: absolute;
+  top: 5em; /*site-nav height*/
+  right: 0;
+  height: 100%;
+  width: 70vw;
+  background-color: #B34F4D;
+}
+.menu ul {
+  padding: 0;
+  list-style-type: none;
+  margin: 0 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.menu li {
+  
 }
 
 /*footer layout*/
