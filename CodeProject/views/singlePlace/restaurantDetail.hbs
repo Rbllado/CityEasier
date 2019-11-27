@@ -14,16 +14,17 @@
 
     <h5><a href="{{restaurant.[0].web}}">website</a></h4>
 
-    <p>Description : {{restaurant.[0].description}} </p>
+        <p>Description : {{restaurant.[0].description}} </p>
 
-    {{#each restaurant.[0].comments}}
-    <div class="comments">
-        <h4>Comments:</h4>
-        <p>Name: {{this.name}}</p>
-        <p>date: {{this.date}}</p>
-        <p>comment: {{this.comment}}</p>
-        <br>
-    </div>
-    {{/each}}
+        
+        {{#each restaurant.[0].comments}}
+        <div class="comments">
+            <h4>Comment:</h4>
+            <p>Name: {{this.name}}</p>
+            <p>date: {{this.date}}</p>
+            <p>comment: {{this.comment}}</p>
+            <br>
+        </div>
+        {{/each}}
 
 </div>
