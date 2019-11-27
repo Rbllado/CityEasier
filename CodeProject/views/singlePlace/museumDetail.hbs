@@ -1,5 +1,5 @@
 {{!-- For Museums --}}
-<div>
+<div class="single-place-wrapper">
     <h2>{{museum.[0].name}}</h2>
 
     <img src="{{museum.[0].img}}" alt="">
@@ -12,12 +12,13 @@
 
     <button class="favourite" data-placeid="{{museum.[0]._id}}">Button to add favourites</button>
 
-    <h4><a href="{{museum.[0].web}}">web</a></h4>
+    <h5><a href="{{museum.[0].web}}">web</a></h5>
 
     <p>Description : {{museum.[0].description}} </p>
 
     {{#each museum.[0].comments}}
-    <div>
+    <div class="comments">
+        <h4>Comment:</h4>
         <p>Name: {{this.name}}</p>
         <p>date: {{this.date}}</p>
         <p>comment: {{this.comment}}</p>

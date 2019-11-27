@@ -222,14 +222,13 @@ footer p {
   font-size: 2.2rem;
   color: #175d79;
   text-align: center;
-  margin-bottom: 2rem;
 }
 
 .signup-wrapper {
-  height: 75vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .signup-form {
@@ -252,25 +251,28 @@ footer p {
   border-radius: 15px;
   background-color: rgb(245, 238, 238);
   width: 70vw;
-  margin: 1rem auto;
+  margin: 0.5rem auto;
 }
 
 .signup-form button {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: #175d79;
   text-decoration: none;
   display: inline-block;
   margin: 1rem auto;
-  width: 70vw;
+  width: 75vw;
   text-transform: uppercase;
   padding: 0.5em 2em;
-  border: 3px solid #175d79;
+  border: 2px solid #175d79;
   border-radius: 2.5rem;
   background-color: #b3b33d;
 }
 
 .signup-form p {
-  font-size: 2rem;
+  font-size: 1.1rem;
+}
+.signup-form p a {
+  color: #b34f4d;
 }
 
 /*EDIT PAGE as got more inputs*/
@@ -334,7 +336,7 @@ button.edit-profile {
   background-color: rgba(222, 222, 222, 0.4);
 }
 
-/*PLACE-TYPE FAVOURITES*/
+/*PLACE-TYPE and profile page: FAVOURITES*/
 .place-type-wrapper h3 {
   font-size: 2rem;
   text-align: center;
