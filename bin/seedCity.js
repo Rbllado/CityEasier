@@ -2,7 +2,7 @@
 const mongoose = require("mongoose");
 
 const Cities = require("./../models/CitiesModel");
-require('dotenv').config();
+require("dotenv").config();
 
 const cities = [{
     name: "Barcelona",
@@ -14,7 +14,7 @@ const cities = [{
   },
   {
     name: "Naples",
-    img: String,
+    //img: String,
     restaurants: [],
     museums: [],
     events: [],
@@ -22,7 +22,7 @@ const cities = [{
   },
   {
     name: "Paris",
-    img: String,
+    //img: String,
     restaurants: [],
     museums: [],
     events: [],
@@ -30,7 +30,7 @@ const cities = [{
   },
   {
     name: "Mallorca",
-    img: String,
+    //img: String,
     restaurants: [],
     museums: [],
     events: [],
@@ -38,7 +38,7 @@ const cities = [{
   },
   {
     name: "Warsaw",
-    img: String,
+    //img: String,
     restaurants: [],
     museums: [],
     events: [],
@@ -46,7 +46,7 @@ const cities = [{
   },
   {
     name: "Berlin",
-    img: String,
+    //img: String,
     restaurants: [],
     museums: [],
     events: [],
@@ -54,7 +54,7 @@ const cities = [{
   },
   {
     name: "Amsterdam",
-    img: String,
+    //img: String,
     restaurants: [],
     museums: [],
     events: [],

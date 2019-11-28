@@ -24,7 +24,7 @@ if (buttonFav) {
         axios.get(window.location.href+`/../../../favourite?id=${restaurantId}`)
             .then((response) => {
                 buttonFav.style.background = 'red'
-                console.log('response ', response);
+                // console.log('response ', response);
 
             })
             .catch((err) => console.log(err));

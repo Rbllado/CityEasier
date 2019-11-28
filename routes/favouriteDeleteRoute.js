@@ -6,7 +6,7 @@ router.get("/", (req, res, next) => {
   // Get the id from req.query
   const { id } = req.query;
 
-  console.log("id: ", id);
+  // console.log("id: ", id);
 
   // updateOne  User  -> id is on req.session.currentUSer
   // Id from  the currentUser

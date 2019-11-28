@@ -15,7 +15,7 @@ const hotel = [
     name: "CATALONIA BORN",
     type: "Hotel",
     rating: 6,
-    img: "https://www.pinterest.es/pin/287456388698648894/",
+    img: "https://cdn.quierohotel.com/hotel-catalonia-born-PF2450_1.jpg",
     contact: 
       {
         address: "Barcelona",
